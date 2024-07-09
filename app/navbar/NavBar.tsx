@@ -27,8 +27,8 @@ const NavBar = () => {
             Homepage
             </Link>
         </li>
-        <li><Link href={"/About"}>Portfolio</Link></li>
-        <li><Link href={"/Pages/Usernew"}>About</Link></li>
+        <li><Link href={"/pages/about"}>Portfolio</Link></li>
+        <li><Link href={"/pages/usernew"}>About</Link></li>
       </ul>
     </div>
   </div>
