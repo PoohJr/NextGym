@@ -33,7 +33,7 @@ const NavBar = () => {
     </div>
   </div>
   <div className="navbar-center">
-    <Link href={"/"} className="btn btn-ghost text-xl">daisyUI</Link>
+    <Link href={"/"} className="btn btn-ghost text-xl">Home</Link>
   </div>
   <div className="navbar-end">
     <button className="btn btn-ghost btn-circle">

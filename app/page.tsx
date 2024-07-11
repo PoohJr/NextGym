@@ -9,7 +9,7 @@ export default function Home() {
     <main className=""> 
     <NavBar/>
       <Header/>
-      <h1 className="text-blue-300"> Hello Word!</h1>
+      <h1 className="text-blue-300 text-5xl"> Hello Word!</h1>
     </main>
   );
 }
