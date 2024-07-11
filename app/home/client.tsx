@@ -3,17 +3,28 @@ import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Image from 'next/image'
 import Img1 from './images/gym1.jpg'
 import Img2 from './images/gym2.jpg'
 import Img3 from './images/gym3.jpg'
 
-gsap.registerPlugin(useGSAP, TextPlugin);
+gsap.registerPlugin(useGSAP, TextPlugin, ScrollTrigger);
 
 const Client = () => {
+  const [slides, setSlides] = useState()
+
+const ImgsTotal = [Img1, Img2, Img3]
+const slideImg = ImgsTotal.length
+
+let activeSlide = 0;
+
 
   useEffect(() => {
-
+    const interval = setInterval( () =>{
+        
+      },5000)
+      
   },[])
 // Use effect for makin the img switch pages every couple secs
 // use setInterval 
@@ -37,8 +48,19 @@ const Client = () => {
       },{
         opacity:1,
         duration:1,
-        delay:.3,
+        delay:.6,
         delimiter: " ",
+        ease: "power2.out",
+        x:0
+      })
+
+      gsap.fromTo('#carousel', {
+        opacity:0,
+        x: 100,
+      },{
+        opacity:1,
+        duration: 1, 
+        delay:.8,
         ease: "power2.out",
         x:0
       })
@@ -52,18 +74,26 @@ const Client = () => {
     const img3 = useRef(null);
     const img4 = useRef(null);
     const textbox = useRef(null);
+
+    console.log(img1.current);
+    console.log(img2.current);
+    console.log(img3.current);
+
+    
     
   return (
     
       <div className='flex justify-between'>
-      <div ref={textbox} className="flex flex-col justify-center items-center text-white">
+      <div ref={textbox} className="flex flex-col justify-center items-center text-white 
+      lg:m-10 md:m-20 sm:m-30">
           <p id='welcome' className='text-center mr-auto text-5xl font-bold font-body'>Welcome To The Best Gym In Town</p>
           <div className="">
-          <button id='btn' className="m-10 btn-lg btn-outline btn-warning">Contact Us</button>
+          <button id='btn' className="font-body m-10 bg-orange-400 p-4 rounded-xl font-bold 
+          hover:scale-150 hover:bg-orange-500">Contact Us</button>
           </div>
       </div>
    
-    <div className=" carousel lg:w-[900px] h-screen">
+    <div id='carousel' className=" carousel lg:w-[900px] h-screen">
       <div ref={img1} id="slide1" className="carousel-item relative w-full h-auto ">
         <Image
           src={Img1}
