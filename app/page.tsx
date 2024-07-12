@@ -1,15 +1,14 @@
-import Image from "next/image";
-import Link from "next/link";
 import NavBar from "./navbar/NavBar";
 import Header from './home/page'
+import Trainer from "./trainer/trainer";
 
 
 export default function Home() {
   return (
-    <main className=""> 
+    <main className="bg-black"> 
     <NavBar/>
       <Header/>
-      <h1 className="text-blue-300 text-5xl"> Hello Word!</h1>
+      <Trainer/>
     </main>
   );
 }

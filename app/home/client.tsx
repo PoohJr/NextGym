@@ -25,7 +25,7 @@ const Client = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slideImg);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(interval);
   }, [slideImg]);
 
