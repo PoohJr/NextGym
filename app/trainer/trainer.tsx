@@ -10,9 +10,9 @@ const Trainer = () => {
     <div id='hello' className="p-10 items-center align-middle">
         <p className='text-2xl text-white font-body text-center'>Hire our Best Trainers In the City!</p>
         <ul className='pt-10 font-body'>
-            <li className=''>Hello</li>
-            <li>Hello</li>
-            <li>Hello</li>
+            <li className=''>Strength Training</li>
+            <li>Yoga Sessions</li>
+            <li>Power Lifting</li>
         </ul>
 
         <button className='font-body bg-orange-500 text-white 
