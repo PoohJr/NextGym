@@ -14,7 +14,6 @@ const HomePage = () => {
     <div className="bg-black w-full h-screen">
       <Client/>  
     </div>
-  // end of contaiter div ^^
   )
 }
 

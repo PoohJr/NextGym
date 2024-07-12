@@ -25,7 +25,7 @@ const Client = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slideImg);
-    }, 10000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [slideImg]);
 
@@ -33,7 +33,7 @@ const Client = () => {
     const slides = document.querySelectorAll('.carousel-item');
     slides.forEach((slide, index) => {
       if (index === currentSlide) {
-        gsap.fromTo(slide, { autoAlpha: 0, x: 100 }, { autoAlpha: 1, x: 0, ease: "power1.out", duration: 1.5 });
+        gsap.fromTo(slide, { autoAlpha: 0, ease: "power1.out", x: 100 }, { autoAlpha: 1, x: 0, ease: "power1.out", duration: 1.5 });
       } else {
         gsap.to(slide, { autoAlpha: 0, x: -100,ease: "power1.out", duration: 1 });
       }
@@ -78,7 +78,7 @@ const Client = () => {
   });
 
   return (
-    <div className='flex justify-between'>
+    <div className='flex '>
       <div ref={textbox} className="flex flex-col justify-center items-center text-white lg:m-10 md:m-20 sm:m-30">
         <p id='welcome' className='text-center mr-auto text-5xl font-bold font-body'>Welcome To The Best Gym In Town</p>
         <div>
@@ -88,18 +88,19 @@ const Client = () => {
         </div>
       </div>
 
-      <div id='carousel' className="carousel lg:w-[900px] h-screen">
+      <div id='carousel' className=" carousel w-[1000px] h-screen">
         {ImgsTotal.map((img, index) => (
           <div
             key={index}
             ref={index === 0 ? img1 : index === 1 ? img2 : img3}
-            className={`carousel-item relative w-full  ${currentSlide === index ? 'block' : 'hidden'}`}
+            className={` carousel-item relative w-full  ${currentSlide === index ? 'block' : 'hidden'}`}
           >
             <Image
               src={img}
               alt={`Slide ${index + 1}`}
-              className="relative z-10 w-full h-screen"
+              className="relative w-auto h-screen"
             />
+            <div className="absolute left-[-33.75rem] inset-0 bg-gradient-to-r from-transparent via-black to-transparent z-10"></div>
             <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between z-20">
             </div>
           </div>
