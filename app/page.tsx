@@ -1,6 +1,7 @@
 import NavBar from "./navbar/NavBar";
 import Header from './home/page'
 import Trainer from "./trainer/trainer";
+import Cards from "./cards/cards";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
     <NavBar/>
       <Header/>
       <Trainer/>
+      <Cards/>
     </main>
   );
 }

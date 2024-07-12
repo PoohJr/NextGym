@@ -5,14 +5,14 @@ import Trainer1 from './img-train/trainer.jpg'
 const Trainer = () => {
   return (
     
-    <div className="m-20 ">
+    <div className="m-20 mt-32">
 <div className="flex justify-center items-center bg-slate-950 rounded-xl">
     <div id='hello' className="p-10 items-center align-middle">
         <p className='text-2xl text-white font-body text-center'>Hire our Best Trainers In the City!</p>
         <ul className='pt-10 font-body'>
-            <li className=''>Strength Training</li>
-            <li>Yoga Sessions</li>
-            <li>Power Lifting</li>
+            <li className='p-1'>Strength Training</li>
+            <li className='p-1'>Yoga Sessions</li>
+            <li className='p-1'>Power Lifting</li>
         </ul>
 
         <button className='font-body bg-orange-500 text-white 
