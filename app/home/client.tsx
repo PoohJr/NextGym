@@ -82,7 +82,8 @@ const Client = () => {
       <div ref={textbox} className="flex flex-col justify-center items-center text-white lg:m-10 md:m-20 sm:m-30">
         <p id='welcome' className='text-center mr-auto text-5xl font-bold font-body'>Welcome To The Best Gym In Town</p>
         <div>
-          <button id='btn' className="font-body m-10 bg-orange-400 p-4 rounded-xl font-bold hover:scale-150 hover:bg-orange-500">
+          <button id='btn' className="font-body m-10 bg-orange-500 p-4 rounded-xl font-bold hover:scale-150 
+          hover:bg-orange-600 transition-all ease-in-out duration-100 delay-100">
             Contact Us
           </button>
         </div>
