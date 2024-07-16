@@ -2,7 +2,7 @@ import NavBar from "./navbar/NavBar";
 import Header from "./home/page";
 import Trainer from "./trainer/trainer";
 import Cards from "./cards/cards";
-import Contact from "./contact/contact";
+import Contact from "./contact/page";
 
 export default function Home() {
   return (

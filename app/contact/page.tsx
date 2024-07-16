@@ -1,7 +1,7 @@
 import React from "react";
 import GymPic from "./contact-img/gym4.jpg";
 import Image from "next/image";
-import Client from "./contactclient";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -9,7 +9,9 @@ const Contact = () => {
       <div className="relative w-auto h-full">
         <Image src={GymPic} alt="Gym Picture" />
         <div className="flex flex-col items-center justify-center absolute inset-0 mt-52">
-          <Client />
+          <Link href="/contact/contactform">
+            <button className="btn btn-warning">Contact Us</button>
+          </Link>
         </div>
       </div>
 

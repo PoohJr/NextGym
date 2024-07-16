@@ -26,13 +26,13 @@ const NavBar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <Link href={"/"}>Homepage</Link>
+              <Link href={"/Pages"}>Homepage</Link>
             </li>
             <li>
-              <Link href={"/pages/about"}>Portfolio</Link>
+              <Link href={"/Pages/about"}>Portfolio</Link>
             </li>
             <li>
-              <Link href={"/pages/usernew"}>About</Link>
+              <Link href={"/Pages/usernew"}>About</Link>
             </li>
           </ul>
         </div>
