@@ -1,9 +1,12 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/router";
 
 const Client = () => {
+  const router = useRouter();
+
   function navigateBtn() {
-    console.log("Hello");
+    router.push("/contact/contactform");
     // Look at the Video i sent you in whatapps
   }
   return (
