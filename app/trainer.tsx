@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Trainer1 from "./img-train/trainer.jpg";
+import Link from "next/link";
 
 const Trainer = () => {
   return (
@@ -15,16 +16,17 @@ const Trainer = () => {
             <li className="p-1">Yoga Sessions</li>
             <li className="p-1">Power Lifting</li>
           </ul>
-
-          <button
-            className="font-body bg-orange-500 text-white 
+          <Link href={"./trainer"}>
+            <button
+              className="font-body bg-orange-500 text-white 
         p-4 mt-9 rounded-xl w-40
         hover:bg-orange-600 
         transition-all ease-in-out duration-100 delay-100
         "
-          >
-            See Our Training
-          </button>
+            >
+              See Our Training
+            </button>
+          </Link>
         </div>
         <div className="flex flex-col">
           <Image className="h-[500px]" src={Trainer1} alt="" />
