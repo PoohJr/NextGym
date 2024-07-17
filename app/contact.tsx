@@ -9,7 +9,7 @@ const Contact = () => {
       <div className="relative w-auto h-full">
         <Image src={GymPic} alt="Gym Picture" />
         <div className="flex flex-col items-center justify-center absolute inset-0 mt-52">
-          <Link href="/contact/contactform">
+          <Link href="/contactform">
             <button className="btn btn-warning">Contact Us</button>
           </Link>
         </div>
