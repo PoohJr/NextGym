@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import Bill from "./teach-img/Bill.jpg";
-import Zoey from "./teach-img/Zoey.jpg";
+import Bill from "../public/teach-img/Bill.jpg";
+import Zoey from "../public/teach-img/Zoey.jpg";
 
 const Trainpage = () => {
   const trainersImg = [Bill, Zoey];
@@ -18,7 +18,7 @@ const Trainpage = () => {
         </p>
       </div>
       <div className="w-96 h-96">
-        <img src="./public/teach-img/bill.jpg" alt="" />
+        <Image src={Bill} alt="" />
       </div>
     </div>
   );

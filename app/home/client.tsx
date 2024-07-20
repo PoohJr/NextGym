@@ -5,9 +5,9 @@ import { useGSAP } from "@gsap/react";
 import { TextPlugin } from "gsap/TextPlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import Img1 from "./images/gym1.jpg";
-import Img2 from "./images/gym2.jpg";
-import Img3 from "./images/gym3.jpg";
+import Img1 from "../public/images/gym1.jpg";
+import Img2 from "../public/images/gym2.jpg";
+import Img3 from "../public/images/gym3.jpg";
 import Link from "next/link";
 
 gsap.registerPlugin(useGSAP, TextPlugin, ScrollTrigger);

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Trainer1 from "./img-train/trainer.jpg";
+import Trainer1 from "./public/img-train/trainer.jpg";
 import Link from "next/link";
 
 const Trainer = () => {

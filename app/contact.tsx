@@ -1,5 +1,5 @@
 import React from "react";
-import GymPic from "./contact-img/gym4.jpg";
+import GymPic from "./public/contact-img/gym4.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
