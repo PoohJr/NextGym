@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const footer = () => {
   return (
@@ -6,17 +7,23 @@ const footer = () => {
       <footer className="footer bg-base-200 text-base-content p-10">
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Branding</a>
+          <a className="link link-hover">Classes</a>
           <a className="link link-hover">Design</a>
           <a className="link link-hover">Marketing</a>
           <a className="link link-hover">Advertisement</a>
         </nav>
         <nav>
           <h6 className="footer-title">Company</h6>
-          <a className="link link-hover">About us</a>
-          <a className="link link-hover">Contact</a>
+          <Link className="link link-hover" href={"/newabout"}>
+            About us
+          </Link>
+          <Link className="link link-hover" href={"/contactform"}>
+            Contact
+          </Link>
           <a className="link link-hover">Jobs</a>
-          <a className="link link-hover">Press kit</a>
+          <Link className="link link-hover" href={"/faq"}>
+            FAQ
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title">Legal</h6>
