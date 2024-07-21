@@ -48,10 +48,10 @@ function Client() {
   return (
     <div className="min-h-screen mt-72">
       <div ref={aboutRef} className="">
-        <p className="text-center font-body text-3xl text-white">About Us</p>
+        <p className="text-center font-body text-4xl text-white">About Us</p>
       </div>
-      <div ref={bodyRef} className="mt-10 p-16">
-        <p className="text-center">
+      <div ref={bodyRef} className=" p-5">
+        <p className="text-white text-center">
           Welcome to [Gym Name], where community and fitness come together! Born
           from the heart of a small, tight-knit community, we are excited to
           expand and bring our passion for health and wellness to a larger
@@ -74,9 +74,9 @@ function Client() {
           a time
         </p>
       </div>
-      <div className="relative h-screen flex items-center justify-center p-5">
+      <div className="relative h-screen flex items-center justify-center mt-10">
         <Image
-          className="absolute inset-0 w-full h-full object-cover "
+          className="absolute inset-0 w-full h-screen object-cover "
           src={BackImg}
           alt="Hello"
         />

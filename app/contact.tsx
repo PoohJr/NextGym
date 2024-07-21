@@ -15,17 +15,21 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="mt-10 flex justify-between">
-        <div className="">
-          <p className="text-2xl font-body text-orange-400 px-10 mb-2">Email</p>
-          <p className="text-white text-lg px-6 font-body">Hello@gmail.com</p>
+      <div className="mt-10 flex justify-evenly">
+        <div className="flex flex-col">
+          <p className="text-center text-2xl font-body text-orange-400 px-0 mb-0.5">
+            Email
+          </p>
+          <p className="text-white text-lg px-1 font-body">Hello@gmail.com</p>
         </div>
-        <div className="">
-          <p className="text-2xl font-body text-orange-400 px-10 mb-2">Phone</p>
-          <p className="text-white text-lg px-6 font-body">(123)-456-7890</p>
+        <div className="flex flex-col ">
+          <p className="text-center text-2xl font-body text-orange-400 px-0 mb-0.5">
+            Phone
+          </p>
+          <p className="text-white text-lg px-1 font-body">(123)-456-7890</p>
         </div>
-        <div className="">
-          <p className="text-2xl font-body text-orange-400 px-10 mb-2">
+        <div className="flex flex-col">
+          <p className="text-center text-2xl font-body text-orange-400 px-0 mb-0.5">
             Social
           </p>
           <div className="flex justify-center">
