@@ -1,5 +1,6 @@
 import React from "react";
 import Client from "./client";
+import Footer from "../footer";
 const Page = () => {
   return (
     <>
@@ -14,7 +15,7 @@ const Page = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content text-center relative z-10">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">About Us</h1>
+            <h1 className="mb-5 text-5xl font-bold">Welcome</h1>
             <p className="mb-5">
               Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
               excepturi exercitationem quasi. In deleniti eaque aut repudiandae
@@ -24,6 +25,7 @@ const Page = () => {
         </div>
       </div>
       <Client />
+      <Footer />
     </>
   );
 };
