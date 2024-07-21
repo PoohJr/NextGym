@@ -1,11 +1,11 @@
 import React from "react";
-
+import Client from "./client";
 const Page = () => {
   return (
     <>
       <div className="relative hero min-h-screen">
         <video
-          className="absolute top-0 left-0 w-full h-screen object-cover"
+          className="absolute top-0 left-0 w-full h-fit object-cover"
           src="https://videos.pexels.com/video-files/5319856/5319856-uhd_1440_2560_25fps.mp4"
           autoPlay
           loop
@@ -23,10 +23,7 @@ const Page = () => {
           </div>
         </div>
       </div>
-
-      <div className="min-h-screen">
-        <p className="">About Us</p>
-      </div>
+      <Client />
     </>
   );
 };
