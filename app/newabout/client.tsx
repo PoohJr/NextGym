@@ -32,7 +32,7 @@ function Client() {
       opacity: 0,
       x: 100,
       delay: 0.4,
-      start: 'top end',
+      start: "top center",
       markers: true,
       ease: "power2.out",
       duration: 1,
@@ -51,7 +51,7 @@ function Client() {
   }, []);
 
   return (
-    <div className=" mt-0">
+    <div className=" mt-[450px]">
       <div ref={aboutRef} className="">
         <p className="text-center font-body text-4xl text-white">About Us</p>
       </div>
@@ -79,7 +79,7 @@ function Client() {
           a time
         </p>
       </div>
-      <div className="relative h-screen flex items-center justify-center mt-10">
+      <div className="relative h-screen flex items-center justify-center mt-20">
         <Image
           className="absolute inset-0 w-full h-screen object-cover "
           src={BackImg}

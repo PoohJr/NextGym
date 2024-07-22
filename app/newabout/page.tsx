@@ -12,7 +12,6 @@ const Page = () => {
           loop
           muted
         ></video>
-        <div className=" "></div>
         <div className="hero-content text-neutral-content text-center relative z-10">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Welcome</h1>
