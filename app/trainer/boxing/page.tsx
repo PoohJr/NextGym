@@ -1,18 +1,10 @@
 import React from "react";
+import Client from "./client";
 
 const Boxingpage = () => {
   return (
     <div className="h-full">
-      <div className="relative">
-        <video
-          className="absolute  w-full h-full object-cover"
-          src={require("../../public/videos/boxing.mp4")}
-          autoPlay
-          loop
-          muted
-        ></video>
-        <p className="absolute">Welcome to World Of boxing</p>
-      </div>
+      <Client />
     </div>
   );
 };
