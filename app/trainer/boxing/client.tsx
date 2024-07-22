@@ -11,11 +11,17 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const Boxingclient = () => {
   useGSAP(() => {
-    gsap.to("#welcome", {
-      text: "Welcome to The world of Boxing",
-      delay: 0.5,
-      duration: 2,
-      delimiter: " ",
+    gsap.from("#welcome", {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      ease: "power2.out",
+    });
+
+    gsap.from("#class", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
       ease: "power2.out",
     });
   });
@@ -30,15 +36,27 @@ const Boxingclient = () => {
           loop
           muted
         ></video>
-        <div className="absolute inset-0 flex justify-center items-center">
-          <p
-            id="welcome"
-            className="font-body text-white text-2xl font-bold"
-          ></p>
+        <div className="absolute inset-0 flex flex-col justify-center items-center">
+          <p id="welcome" className="font-body text-white text-2xl font-bold">
+            Welcome to The world of Boxing
+          </p>
+          <button
+            id="class"
+            className="bg-red-700 mt-4 p-3  text-white font-body rounded-2xl hover:scale-125 transition-all delay-100 ease-in-out"
+          >
+            Look at Our Classes
+          </button>
         </div>
       </div>
-      <div className="h-screen">
-        <p>Now the Time for these classes</p>
+      <div className="h-screen flex flex-col">
+        <p className="text-white text-center text-2xl mt-20 p-10">
+          No Matter what Skill level We have a Place for you!
+        </p>
+        <p className="text-white text-center text-2xl mt-0 p-4">
+          {" "}
+          ever see some silly moment from a train ride from the L train
+        </p>
+        <p>Voxing </p>
       </div>
     </>
   );
