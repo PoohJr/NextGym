@@ -4,7 +4,7 @@ import Footer from "../footer";
 const Page = () => {
   return (
     <>
-      <div className="relative hero min-h-screen">
+      <div className="relative hero min-h-[65vh]">
         <video
           className="absolute top-0 left-0 w-full h-fit object-cover"
           src="https://videos.pexels.com/video-files/5319856/5319856-uhd_1440_2560_25fps.mp4"
@@ -12,7 +12,7 @@ const Page = () => {
           loop
           muted
         ></video>
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className=" "></div>
         <div className="hero-content text-neutral-content text-center relative z-10">
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Welcome</h1>

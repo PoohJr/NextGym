@@ -20,6 +20,7 @@ function Client() {
       },
       opacity: 0,
       x: -100,
+      ease: "power2.out",
       duration: 1,
     });
 
@@ -31,6 +32,9 @@ function Client() {
       opacity: 0,
       x: 100,
       delay: 0.4,
+      start: 'top end',
+      markers: true,
+      ease: "power2.out",
       duration: 1,
     });
 
@@ -41,12 +45,13 @@ function Client() {
       },
       opacity: 0,
       x: -100,
+      ease: "power2.out",
       duration: 1,
     });
   }, []);
 
   return (
-    <div className="min-h-screen mt-72">
+    <div className=" mt-0">
       <div ref={aboutRef} className="">
         <p className="text-center font-body text-4xl text-white">About Us</p>
       </div>
