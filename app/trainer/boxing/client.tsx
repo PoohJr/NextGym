@@ -50,15 +50,12 @@ const Boxingclient = () => {
       <div className="relative h-screen">
         <nav className=" border-gray-200 bg-black">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a
+            <Link
               href="https://flowbite.com/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <Image className="h-20 w-20" src={Logo} alt="Logo"></Image>
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Flowbite
-              </span>
-            </a>
+            </Link>
             <button
               data-collapse-toggle="navbar-default"
               type="button"
@@ -166,7 +163,46 @@ const Boxingclient = () => {
               No Matter what Skill level We have a Place for you!
             </p>
           </div>
-          <div className=""></div>
+          <div className=" border-b-2">
+            <ul className="p-10 list-disc">
+              <li className="text-white">
+                Full-Body Workout: Boxing engages multiple muscle groups,
+                providing a full-body workout that improves overall strength and
+                conditioning. It works the arms, shoulders, chest, back, legs,
+                and core.
+              </li>
+              <li className="text-white">
+                Cardiovascular Health: The high-intensity nature of boxing
+                workouts enhances cardiovascular fitness. It boosts heart
+                health, increases stamina, and improves circulation.
+              </li>
+              <li className="text-white">
+                Improves Coordination and Balance: Boxing requires precise
+                movements and quick reflexes, which enhance hand-eye
+                coordination, agility, and balance.
+              </li>
+              <li className="text-white">
+                Stress Relief: Boxing can be a great way to release pent-up
+                energy and stress. The physical activity helps produce
+                endorphins, which are natural mood lifters.
+              </li>
+              <li className="text-white">
+                Boosts Confidence: Learning and mastering boxing techniques can
+                significantly boost self-confidence and provide a sense of
+                accomplishment.
+              </li>
+              <li className="text-white">
+                Fun and Engaging: Boxing is a dynamic and engaging form of
+                exercise, which can keep workouts interesting and motivate
+                individuals to stay consistent.
+              </li>
+              <li className="text-white">
+                Mental Focus and Discipline: Boxing requires concentration,
+                strategy, and discipline, which can improve mental sharpness and
+                focus.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </>
