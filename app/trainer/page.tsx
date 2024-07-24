@@ -142,7 +142,7 @@ const Trainpage: React.FC = () => {
         <nav className="">
           <ul className="flex justify-evenly bg-slate-950">
             <li className="cursor-pointer">
-              <p className="text-white">Mon</p>
+              <p className="text-white align-middle">Mon</p>
             </li>
             <li className="cursor-pointer">
               <p className="text-white">Tues</p>
@@ -167,8 +167,8 @@ const Trainpage: React.FC = () => {
         <div className="mt-8 bg-white">
           <div className="flex  bg-white w-full px-5 pt-5 text-slate-950">
             <p>{dayMessage}</p> <p className="ml-1">{day}</p>
-            <hr></hr>
           </div>
+          <hr></hr>
           {initialSchedule.map((item, index) => (
             <div key={index} className="m-1">
               <Link href={item.todo}>
