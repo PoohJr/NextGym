@@ -140,7 +140,7 @@ const Trainpage: React.FC = () => {
       </div>
       <div className="p-8">
         <nav className="">
-          <ul className="flex justify-evenly bg-slate-950">
+          <ul className="flex justify-evenly bg-slate-500 p-3">
             <li className="cursor-pointer">
               <p className="text-white align-middle">Mon</p>
             </li>
@@ -164,7 +164,7 @@ const Trainpage: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="mt-8 bg-white">
+        <div className="mt-2 bg-white">
           <div className="flex  bg-white w-full px-5 pt-5 text-slate-950">
             <p>{dayMessage}</p> <p className="ml-1">{day}</p>
           </div>
