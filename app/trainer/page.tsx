@@ -164,9 +164,9 @@ const Trainpage: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="mt-8  bg-white">
-          <div className="bg-white w-full px-5 pt-5 text-slate-950">
-            {dayMessage} {day}
+        <div className="mt-8 bg-white">
+          <div className="flex  bg-white w-full px-5 pt-5 text-slate-950">
+            <p>{dayMessage}</p> <p className="ml-1">{day}</p>
             <hr></hr>
           </div>
           {initialSchedule.map((item, index) => (
@@ -176,7 +176,9 @@ const Trainpage: React.FC = () => {
                   <h3 className="text-center text-black font-body ">
                     {item.typeofclass}
                   </h3>
-                  <p className="text-center">{item.nameofcoach}</p>
+                  <p className="text-center">
+                    Instructor: <span>{item.nameofcoach}</span>
+                  </p>
                   <p className="text-center">{item.location}</p>
                   <p className="text-center">{item.time}</p>
                   <hr></hr>
