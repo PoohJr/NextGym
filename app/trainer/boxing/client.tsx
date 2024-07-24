@@ -53,9 +53,13 @@ const Boxingclient = () => {
           No Matter what Skill level We have a Place for you!
         </p>
         <p className="text-white text-center text-2xl mt-0 p-4">
-          {" "}
+          
           ever see some silly moment from a train ride from the L train
         </p>
+        <div className="">
+          <p>hello</p>
+          <p>ve</p>
+        </div>
         <p>Voxing </p>
       </div>
     </>
