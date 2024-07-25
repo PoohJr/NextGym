@@ -2,10 +2,11 @@
 import React from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import BoxingImg from "../../public/boxing-img/boxing-training-session-in-gym.jpg";
+import YouthBoxing from "../../public/boxing-img/youth-boxing.jpg";
 import Logo from "../../public/gymlogo/logo.png";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -18,6 +19,8 @@ const Boxingclient = () => {
   const page2colRef = useRef(null);
 
   useGSAP(() => {
+    const elements = page2colRef.current ? page2colRef.current.children : [];
+
     gsap.from("#welcome", {
       opacity: 0,
       y: -150,
@@ -32,19 +35,21 @@ const Boxingclient = () => {
       ease: "power2.out",
     });
 
-    gsap.from(page2colRef.current, {
-      scrollTrigger: {
-        trigger: page2colRef.current,
-        toggleActions: "restart none none none",
-      },
-      opacity: 0,
-      x: -100,
-      start: "top center",
-      duration: 1,
-      ease: "power2.out",
-    });
-  });
-
+    if (elements.length) {
+      gsap.from(elements, {
+        scrollTrigger: {
+          trigger: page2colRef.current,
+          toggleActions: "restart none none none",
+          start: "top center",
+        },
+        opacity: 0,
+        x: -100,
+        duration: 1,
+        ease: "power2.out",
+        stagger: 0.2, // adjust the stagger duration as needed
+      });
+    }
+  }, []);
   return (
     <>
       <div className="relative h-screen">
@@ -152,51 +157,52 @@ const Boxingclient = () => {
               Add Something here{" "}
             </p>
           </div>
-          <div className="border-r-2 border-b-2">
-            <p>Hello</p>
+          <div className="border-r-2 border-b-2 p-10">
+            <Image src={YouthBoxing} alt="Youth Boxing"></Image>
+            <p className="text-center mt-6">Youth Boxing </p>
           </div>
           <div className=""></div>
         </div>
         <div ref={page2textRef} className="w-2/3 flex flex-col">
-          <div className="border-b-2">
-            <p className="text-white text-center text-2xl mt-20 font-body p-10">
+          <div className="border-b-2 ">
+            <p className="text-white text-center text-2xl mt-32 font-body p-10">
               No Matter what Skill level We have a Place for you!
             </p>
           </div>
           <div className=" border-b-2">
-            <ul className="p-10 list-disc">
+            <ul className="p-8 list-disc">
               <li className="text-white">
                 Full-Body Workout: Boxing engages multiple muscle groups,
                 providing a full-body workout that improves overall strength and
                 conditioning. It works the arms, shoulders, chest, back, legs,
                 and core.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Cardiovascular Health: The high-intensity nature of boxing
                 workouts enhances cardiovascular fitness. It boosts heart
                 health, increases stamina, and improves circulation.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Improves Coordination and Balance: Boxing requires precise
                 movements and quick reflexes, which enhance hand-eye
                 coordination, agility, and balance.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Stress Relief: Boxing can be a great way to release pent-up
                 energy and stress. The physical activity helps produce
                 endorphins, which are natural mood lifters.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Boosts Confidence: Learning and mastering boxing techniques can
                 significantly boost self-confidence and provide a sense of
                 accomplishment.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Fun and Engaging: Boxing is a dynamic and engaging form of
                 exercise, which can keep workouts interesting and motivate
                 individuals to stay consistent.
               </li>
-              <li className="text-white">
+              <li className="text-white mt-3">
                 Mental Focus and Discipline: Boxing requires concentration,
                 strategy, and discipline, which can improve mental sharpness and
                 focus.
