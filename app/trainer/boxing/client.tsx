@@ -8,6 +8,7 @@ import Link from "next/link";
 import BoxingImg from "../../public/boxing-img/boxing-training-session-in-gym.jpg";
 import YouthBoxing from "../../public/boxing-img/youth-boxing.jpg";
 import Logo from "../../public/gymlogo/logo.png";
+import Tort from "../../public/boxing-img/tort.jpg";
 
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
@@ -17,6 +18,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 const Boxingclient = () => {
   const page2textRef = useRef(null);
   const page2colRef = useRef(null);
+  const page2listRef = useRef(null);
 
   useGSAP(() => {
     const elements = page2colRef.current ? page2colRef.current.children : [];
@@ -39,27 +41,43 @@ const Boxingclient = () => {
       gsap.from(elements, {
         scrollTrigger: {
           trigger: page2colRef.current,
-          toggleActions: "restart none none none",
+          toggleActions: "play pause resume none",
           start: "top center",
         },
         opacity: 0,
         x: -100,
         duration: 1,
         ease: "power2.out",
-        stagger: 0.2, // adjust the stagger duration as needed
+        stagger: 0.2,
       });
     }
-  }, []);
+
+    gsap.from(page2listRef.current, {
+      scrollTrigger: {
+        trigger: page2colRef.current,
+        toggleActions: "play pause resume none",
+        start: "top center",
+      },
+      opacity: 0,
+      duration: 1,
+      ease: "power2.out",
+      stagger: 0.2,
+    });
+  });
   return (
     <>
       <div className="relative h-screen">
-        <nav className=" border-gray-200 bg-black">
+        <nav className="bg-black">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link
-              href="https://flowbite.com/"
+              href="/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <Image className="h-20 w-20" src={Logo} alt="Logo"></Image>
+              <Image
+                className="cursor-pointer h-20 w-20"
+                src={Logo}
+                alt="Logo"
+              ></Image>
             </Link>
             <button
               data-collapse-toggle="navbar-default"
@@ -152,16 +170,21 @@ const Boxingclient = () => {
       <div className="flex justify-between h-screen ">
         <div ref={page2colRef} className="flex flex-col w-1/3">
           <div className="mt-44 ml-4 border-b-2 border-r-2 p-10">
-            <Image className="h-52" src={BoxingImg} alt="sparring"></Image>
-            <p className="text-center mt-5 text-white et">
-              Add Something here{" "}
-            </p>
+            <Image className="h-32" src={BoxingImg} alt="sparring"></Image>
+            <p className="text-center mt-5 text-white et">Add Something here</p>
           </div>
-          <div className="border-r-2 border-b-2 p-10">
-            <Image src={YouthBoxing} alt="Youth Boxing"></Image>
+          <div className="ml-4 border-r-2 border-b-2 p-10">
+            <Image
+              className="h-32"
+              src={YouthBoxing}
+              alt="Youth Boxing"
+            ></Image>
             <p className="text-center mt-6">Youth Boxing </p>
           </div>
-          <div className=""></div>
+          <div className="ml-4 border-r-2 border-b-2 p-8">
+            <Image className="h-32" src={Tort} alt="Tortament Img"></Image>
+            <p className="text-center"> Add Something</p>
+          </div>
         </div>
         <div ref={page2textRef} className="w-2/3 flex flex-col">
           <div className="border-b-2 ">
@@ -169,7 +192,7 @@ const Boxingclient = () => {
               No Matter what Skill level We have a Place for you!
             </p>
           </div>
-          <div className=" border-b-2">
+          <div ref={page2listRef} className="border-b-2">
             <ul className="p-8 list-disc">
               <li className="text-white">
                 Full-Body Workout: Boxing engages multiple muscle groups,
