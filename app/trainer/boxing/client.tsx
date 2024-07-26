@@ -198,7 +198,7 @@ const Boxingclient = () => {
             </p>
           </div>
           <div ref={page2listRef} className="border-b-2 ">
-            <ul className="p-8 list-disc">
+            {/* <ul className="p-8 list-disc">
               <li className="text-white text-lg font-body">
                 <span className="font-bold">Full-Body Workout</span>: Boxing
                 engages multiple muscle groups, providing a full-body workout
@@ -235,7 +235,18 @@ const Boxingclient = () => {
                 strategy, and discipline, which can improve mental sharpness and
                 focus.
               </li>
-            </ul>
+            </ul> */}
+            <div className="p-5">
+              <p>Boxing is A high Endurance Workout so be Prepared to work</p>
+              <p>
+                For the early morning Class Bill likes to pound the
+                fundementsals
+                <p>
+                  Such as working on a proper boxing stance and footwork, such
+                  as finding out if your a orthodox or southpaw fighter
+                </p>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -244,6 +255,7 @@ const Boxingclient = () => {
 };
 
 // Inspo
+//Look At gpt for inspo
 // https://www.canva.com/design/DAGL4Q6JIl8/7axbPDVNzze68ld0jQhEAw/edit
 // https://www.equinox.com/clubs/new-york/uptown/columbuscircle
 // Look At the footer and update it to look something like this
