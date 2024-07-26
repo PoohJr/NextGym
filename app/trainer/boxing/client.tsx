@@ -30,13 +30,17 @@ const Boxingclient = () => {
       ease: "power2.out",
     });
 
-    gsap.from("#class", {
+    gsap.from(page2textRef.current, {
+      scrollTrigger: {
+        trigger: page2textRef.current,
+        toggleActions: "play pause resume none",
+        start: "top center",
+      },
       opacity: 0,
       y: -50,
       duration: 1,
       ease: "power2.out",
     });
-
     if (elements.length) {
       gsap.from(elements, {
         scrollTrigger: {
@@ -60,6 +64,7 @@ const Boxingclient = () => {
       },
       opacity: 0,
       duration: 1,
+      delay: 0.5,
       ease: "power2.out",
       stagger: 0.2,
     });
@@ -70,8 +75,8 @@ const Boxingclient = () => {
         <nav className="bg-black">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link
-              href="/"
-              className="flex items-center space-x-3 rtl:space-x-reverse"
+              href="./"
+              className=" cursor-pointer flex items-center space-x-3 rtl:space-x-reverse"
             >
               <Image
                 className="cursor-pointer h-20 w-20"
@@ -96,9 +101,9 @@ const Boxingclient = () => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M1 1h15M1 7h15M1 13h15"
                 />
               </svg>
@@ -110,8 +115,8 @@ const Boxingclient = () => {
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                   <Link
-                    href="/"
-                    className=" block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                    href=""
+                    className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                     aria-current="page"
                   >
                     Home
@@ -169,7 +174,7 @@ const Boxingclient = () => {
       </div>
       <div className="flex justify-between h-screen ">
         <div ref={page2colRef} className="flex flex-col w-1/3">
-          <div className="mt-44 ml-4 border-b-2 border-r-2 p-10">
+          <div className="mt-28 ml-4 border-b-2 border-r-2 p-10">
             <Image className="h-32" src={BoxingImg} alt="sparring"></Image>
             <p className="text-center mt-5 text-white et">Add Something here</p>
           </div>
@@ -187,45 +192,45 @@ const Boxingclient = () => {
           </div>
         </div>
         <div ref={page2textRef} className="w-2/3 flex flex-col">
-          <div className="border-b-2 ">
-            <p className="text-white text-center text-2xl mt-32 font-body p-10">
+          <div className="border-b-2">
+            <p className="text-white text-center text-4xl mt-[94px] font-body p-10">
               No Matter what Skill level We have a Place for you!
             </p>
           </div>
-          <div ref={page2listRef} className="border-b-2">
+          <div ref={page2listRef} className="border-b-2 ">
             <ul className="p-8 list-disc">
-              <li className="text-white">
-                Full-Body Workout: Boxing engages multiple muscle groups,
-                providing a full-body workout that improves overall strength and
-                conditioning. It works the arms, shoulders, chest, back, legs,
-                and core.
+              <li className="text-white text-lg font-body">
+                <span className="font-bold">Full-Body Workout</span>: Boxing
+                engages multiple muscle groups, providing a full-body workout
+                that improves overall strength and conditioning. It works the
+                arms, shoulders, chest, back, legs, and core.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Cardiovascular Health: The high-intensity nature of boxing
                 workouts enhances cardiovascular fitness. It boosts heart
                 health, increases stamina, and improves circulation.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Improves Coordination and Balance: Boxing requires precise
                 movements and quick reflexes, which enhance hand-eye
                 coordination, agility, and balance.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Stress Relief: Boxing can be a great way to release pent-up
                 energy and stress. The physical activity helps produce
                 endorphins, which are natural mood lifters.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Boosts Confidence: Learning and mastering boxing techniques can
                 significantly boost self-confidence and provide a sense of
                 accomplishment.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Fun and Engaging: Boxing is a dynamic and engaging form of
                 exercise, which can keep workouts interesting and motivate
                 individuals to stay consistent.
               </li>
-              <li className="text-white mt-3">
+              <li className="text-white mt-3 text-lg">
                 Mental Focus and Discipline: Boxing requires concentration,
                 strategy, and discipline, which can improve mental sharpness and
                 focus.
