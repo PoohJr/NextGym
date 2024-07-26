@@ -130,12 +130,9 @@ const Trainpage: React.FC = () => {
 
   return (
     <>
-      <div className="p-10">
+      <div className="pt-8">
         <p className="text-center text-3xl text-white font-body">
-          Hello and Welcome To the
-        </p>
-        <p className="text-center text-3xl text-white font-body">
-          Trainers of (nameofgym)
+          Classes this week
         </p>
       </div>
       <div className="p-8">
@@ -164,8 +161,8 @@ const Trainpage: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <div className="mt-2 bg-white">
-          <div className="flex  bg-white w-full px-5 pt-5 text-slate-950">
+        <div className=" bg-white">
+          <div className="flex  bg-white w-full p-2 pl-4 text-slate-950">
             <p>{dayMessage}</p> <p className="ml-1">{day}</p>
           </div>
           <hr></hr>
