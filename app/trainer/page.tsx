@@ -94,36 +94,6 @@ const initialSchedule: Schedule[] = [
     todo: "/trainer/strength",
   },
 ];
-// const trainers: Trainer[] = [
-//   {
-//     img: Bill,
-//     name: "Bill",
-//     desc: "Bill is Great boxing Coach",
-//     title: "Boxing Coach",
-//     goto: "boxing",
-//   },
-//   {
-//     img: Zoey,
-//     name: "Zoey",
-//     desc: "Zoey is a great Yoga Instructor",
-//     title: "Yoga Coach",
-//     goto: "yoga",
-//   },
-//   {
-//     img: Francis,
-//     name: "Francis",
-//     desc: "Our best strength coach is the one and only Francis",
-//     title: "Stength Coach",
-//     goto: "strength",
-//   },
-//   {
-//     img: Luis,
-//     name: "Luis",
-//     desc: "Our swimming coach is Luis",
-//     title: "Swimming Coach",
-//     goto: "swimming",
-//   },
-// ];
 
 const Trainpage: React.FC = () => {
   const dayMessage = getNewdat();
@@ -185,31 +155,6 @@ const Trainpage: React.FC = () => {
           ))}
         </div>
       </div>
-      {/* <div className="flex flex-col justify-center items-center">
-        {trainers.map((trainer, index) => (
-          <div className="w-screen h-screen m-28 p-10  " key={index}>
-            <Image
-              className="w-screen h-screen border-4 border-cyan-100"
-              src={trainer.img}
-              alt={trainer.name}
-            />
-            <p className="text-center font-body text-white text-2xl mt-2">
-              {trainer.name}
-            </p>
-            <p className="text-center font-body font-bold ">{trainer.title}</p>
-            <p className="text-center py-2 font-body text-white">
-              {trainer.desc}
-            </p>
-            <div className="flex justify-center">
-              <Link href={`/trainer/${trainer.goto}`}>
-                <b className="text-white"utton className="text-white font-body bg-red-600 p-3 rounded-lg">
-                  Click Here for more Info
-                </button>
-              </Link>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </>
   );
 };
