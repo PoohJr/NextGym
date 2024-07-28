@@ -113,7 +113,7 @@ const Boxingclient = () => {
               id="navbar-default"
             >
               <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                <li>
+                <li className="font-body text-white">
                   <Link
                     href=""
                     className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
@@ -122,7 +122,7 @@ const Boxingclient = () => {
                     Home
                   </Link>
                 </li>
-                <li>
+                <li className="font-body text-white">
                   <a
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -130,7 +130,7 @@ const Boxingclient = () => {
                     About
                   </a>
                 </li>
-                <li>
+                <li className="font-body text-white">
                   <a
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -138,7 +138,7 @@ const Boxingclient = () => {
                     Services
                   </a>
                 </li>
-                <li>
+                <li className="font-body text-white">
                   <a
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -146,7 +146,7 @@ const Boxingclient = () => {
                     Pricing
                   </a>
                 </li>
-                <li>
+                <li className="font-body text-white">
                   <a
                     href="#"
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
@@ -176,7 +176,7 @@ const Boxingclient = () => {
         <div ref={page2colRef} className="flex flex-col w-1/3">
           <div className="mt-28 ml-4 border-b-2 border-r-2 p-10">
             <Image className="h-32" src={BoxingImg} alt="sparring"></Image>
-            <p className="text-center mt-5 text-white et">Add Something here</p>
+            <p className="text-center mt-5 text-white">Add Something here</p>
           </div>
           <div className="ml-4 border-r-2 border-b-2 p-10">
             <Image
@@ -194,58 +194,47 @@ const Boxingclient = () => {
         <div ref={page2textRef} className="w-2/3 flex flex-col">
           <div className="border-b-2">
             <p className="text-white text-center text-4xl mt-[94px] font-body p-10">
-              No Matter what Skill level We have a Place for you!
+              Beginner Boxing Classes and waht to expect
             </p>
           </div>
           <div ref={page2listRef} className="border-b-2 ">
-            {/* <ul className="p-8 list-disc">
-              <li className="text-white text-lg font-body">
-                <span className="font-bold">Full-Body Workout</span>: Boxing
-                engages multiple muscle groups, providing a full-body workout
-                that improves overall strength and conditioning. It works the
-                arms, shoulders, chest, back, legs, and core.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Cardiovascular Health: The high-intensity nature of boxing
-                workouts enhances cardiovascular fitness. It boosts heart
-                health, increases stamina, and improves circulation.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Improves Coordination and Balance: Boxing requires precise
-                movements and quick reflexes, which enhance hand-eye
-                coordination, agility, and balance.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Stress Relief: Boxing can be a great way to release pent-up
-                energy and stress. The physical activity helps produce
-                endorphins, which are natural mood lifters.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Boosts Confidence: Learning and mastering boxing techniques can
-                significantly boost self-confidence and provide a sense of
-                accomplishment.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Fun and Engaging: Boxing is a dynamic and engaging form of
-                exercise, which can keep workouts interesting and motivate
-                individuals to stay consistent.
-              </li>
-              <li className="text-white mt-3 text-lg">
-                Mental Focus and Discipline: Boxing requires concentration,
-                strategy, and discipline, which can improve mental sharpness and
-                focus.
-              </li>
-            </ul> */}
             <div className="p-5">
-              <p>Boxing is A high Endurance Workout so be Prepared to work</p>
-              <p>
-                For the early morning Class Bill likes to pound the
-                fundementsals
-                <p>
-                  Such as working on a proper boxing stance and footwork, such
-                  as finding out if your a orthodox or southpaw fighter
-                </p>
-              </p>
+              <ul className="px-5 list-disc">
+                <li className="font-body text-white">Stance/ FootWork</li>
+                <li className="font-body text-white">
+                  Work On the basic punches such as{" "}
+                  <span className="font-bold">Jabs</span>,{" "}
+                  <span className="font-bold">Cross</span>,{" "}
+                  <span className="font-bold">Hook</span>,{" "}
+                  <span className="font-bold">Uppercuts</span>
+                </li>
+                <li className="font-body text-white">
+                  <span className="font-bold">Defensive Techniques</span>such as
+                  , blocking, parrying, slipping, bob and weave
+                </li>
+                <li className="font-body text-white">
+                  Now Combining basic punches maining with the Jap Emphasis on
+                  fluidity and transitioning between punches smoothly
+                </li>
+                <li className="font-body text-white">
+                  <span className="font-bold">Bag Work</span> to properly use a
+                  heavy bag for practicing punches and combinations.
+                </li>
+                <li className="font-body text-white">
+                  Pad work Partner drills using focus mitts to practice accuracy
+                  and timing.
+                </li>
+                <li className="font-body text-white">
+                  <span className="font-bold"> Conditioning:</span> Exercises to
+                  improve overall fitness, strength, and endurance. Specific
+                  drills for enhancing speed, power, and agility.
+                </li>
+                <li className="font-body text-white">
+                  <span className="font-bold">Cool Down and Stretching:</span>{" "}
+                  Importance of cooling down after training. Stretching routines
+                  to improve flexibility and prevent injuries.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
