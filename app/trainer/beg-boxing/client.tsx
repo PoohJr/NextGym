@@ -11,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Boxingsvg from "../../public/boxing-img/boxer-black-white-silhouette-vector-design-boxing-silhouette_1188713-997.svg";
 import Boxing from "../../public/boxing-img/img2.svg";
+import Heavybag from "../../public/boxing-img/heavybag.svg";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
@@ -38,6 +39,10 @@ const Boxingclient = () => {
     offense: {
       img: Boxing,
       description: "Jabs, Cross, Hooks",
+    },
+    heavy: {
+      img: Heavybag,
+      description: "Will Work on Heavy Bags",
     },
   };
 
@@ -173,6 +178,11 @@ const Boxingclient = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex flex-col items-center justify-center mt-30">
+        {/* Add an image above text */}
+        <p>Mental Tenedacy </p>
+        <p>explay why its good.</p>
       </div>
     </>
   );
