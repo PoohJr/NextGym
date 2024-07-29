@@ -2,7 +2,7 @@
 import React from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/gymlogo/logo.png";
@@ -15,16 +15,19 @@ import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
 import MaleBoxer from "../../public/boxing-img/boxers-males-boxing-sports-c7038a-1024.jpg";
+import Clock from "../../public/boxing-img/th-1845431758.svg";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const Boxingclient = () => {
-  const page2textRef = useRef(null);
+  const cardsRef = useRef(null);
 
   useGSAP(() => {});
 
   interface Item {
     img: string | StaticImageData;
     description: string;
+    // listheader: string;
+    // listdes:string;
   }
 
   interface Items {
@@ -35,6 +38,8 @@ const Boxingclient = () => {
     Stance: {
       img: Boxingsvg,
       description: "FootWork and Stance",
+      // listheader: 'Stance:',
+      // listdes:
     },
     offense: {
       img: Boxing,
@@ -43,6 +48,10 @@ const Boxingclient = () => {
     heavy: {
       img: Heavybag,
       description: "Will Work on Heavy Bags",
+    },
+    boxingclock: {
+      img: Clock,
+      description: "Will Only be for 30-45 mins of training",
     },
   };
 
@@ -134,7 +143,7 @@ const Boxingclient = () => {
 
       <div className="h-[800px] bg-white">
         <div className="flex justify-center relative">
-          <div ref={page2textRef} className="flex flex-col items-center">
+          <div className="flex flex-col items-center">
             <div className="w-screen h-36 bg-slate-900 absolute top-[45%] left-0 "></div>
             <div className="relative z-10 mt-16 p-3">
               <div className="rounded-full bg-black p-3 h-84 w-64 flex items-center justify-center">
@@ -145,12 +154,12 @@ const Boxingclient = () => {
                 />
               </div>
               <div className="flex justify-center">
-                <div className=" absolute top-72 bg-slate-900 p-2 h-64 w-80 z-20">
+                <div className=" absolute top-72 bg-slate-900  p-4 h-72 w-80 z-20">
                   <div className="break-words">
                     <p className="text-center mt-3 font-body text-3xl text-white font-bold">
                       Boxing
                     </p>
-                    <p className="p-1">
+                    <p className="mt-2 p-1 text-white">
                       Boxing is a combat sport where two fighters use their
                       fists to score points or knock out their opponent. It
                       improves physical fitness, strength, and mental toughness.
@@ -159,28 +168,40 @@ const Boxingclient = () => {
                     </p>
                   </div>
                 </div>
-                <div className="absolute top-96 right-1 bg-black h-52 w-80 z-10"></div>
+                <div className="absolute top-96 right-1 bg-black h-64 w-80 z-10"></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="mt-10 flex flex-col justify-center items-center">
-        <p className="mb-5">What will go on in the mopring Class </p>
-        {Object.keys(items).map((key, index) => (
-          <div key={index} className="bg-white rounded-xl w-64 my-10">
-            <Image
-              className="h-24 mt-5"
-              src={items[key].img}
-              alt={`${key} logo`}
-            ></Image>
-            <div className="">
-              <p className="text-center mt-3 text-lg text-black">{}</p>
-              <p className="text-center text-black">{items[key].description}</p>
-              <p></p>
+        <p className="mb-5 text-white text-center font-bold font-body text-3xl p-4">
+          What will go on in the Morning Class{" "}
+        </p>
+        <div ref={cardsRef} className="">
+          {Object.keys(items).map((key, index) => (
+            <div key={index} className="bg-white rounded-xl h-64 w-64 my-5 ">
+              <div className="flex flex-col justify-center items-center">
+                <Image
+                  className="h-24 mt-5"
+                  src={items[key].img}
+                  alt={`${key} logo`}
+                ></Image>
+              </div>
+              <div className="">
+                <p className="text-center text-black">
+                  {items[key].description}
+                </p>
+                <ul>
+                  <li>
+                    {items[key].listheader}
+                    <p>{items[key].listdes}</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <div className="flex flex-col items-center justify-center mt-32">
         <div className="bg-white rounded-full p-2 m-10">
@@ -218,18 +239,19 @@ const Boxingclient = () => {
           </p>
           <div className="bg-white rounded-full p-2 mx-24 mb-10">
             <Image
-              className="rounded-full"
+              className=" rounded-full"
               src={FemaleBoxer}
               alt="Female Boxer"
             ></Image>
           </div>
         </div>
-      </div>
-      <div className=" bg-gray-600 flex-col flex items-center justify-center">
-        {/* change the background color of the parent div */}
-        <div className="">
-          <Image src={MaleBoxer} alt="Male Boxers"></Image>
-        </div>
+
+        {/* <div className="m-5">
+          <Link href={}>
+          <button className="btn btn-primary">Click to Sign up</button>
+          </Link>
+        </div> */}
+        {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
       </div>
     </>
   );
