@@ -12,13 +12,13 @@ import { TextPlugin } from "gsap/TextPlugin";
 import Boxingsvg from "../../public/boxing-img/boxer-black-white-silhouette-vector-design-boxing-silhouette_1188713-997.svg";
 import Boxing from "../../public/boxing-img/img2.svg";
 import Heavybag from "../../public/boxing-img/heavybag.svg";
-
+import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
+import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
+import MaleBoxer from "../../public/boxing-img/boxers-males-boxing-sports-c7038a-1024.jpg";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const Boxingclient = () => {
   const page2textRef = useRef(null);
-  const page2colRef = useRef(null);
-  const page2listRef = useRef(null);
 
   useGSAP(() => {});
 
@@ -150,9 +150,12 @@ const Boxingclient = () => {
                     <p className="text-center mt-3 font-body text-3xl text-white font-bold">
                       Boxing
                     </p>
-                    <p className="p-2">
-                      sOMSVCYIHUADSGCBVJKABSCHIUGABDVUIKDAYUIB
-                      JHKbjikdfbvujiksabdvifdbsyujvby
+                    <p className="p-1">
+                      Boxing is a combat sport where two fighters use their
+                      fists to score points or knock out their opponent. It
+                      improves physical fitness, strength, and mental toughness.
+                      For beginners, boxing offers a way to learn self-defense,
+                      build confidence, and stay disciplined.
                     </p>
                   </div>
                 </div>
@@ -179,10 +182,54 @@ const Boxingclient = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col items-center justify-center mt-30">
-        {/* Add an image above text */}
-        <p>Mental Tenedacy </p>
-        <p>explay why its good.</p>
+      <div className="flex flex-col items-center justify-center mt-32">
+        <div className="bg-white rounded-full p-2 m-10">
+          <Image
+            className="rounded-full"
+            src={Mental}
+            alt="Mental Toughness"
+          ></Image>
+        </div>
+        <div className="">
+          <p className="text-center text-3xl font-body font-bold text-white">
+            Mental Tenedacy{" "}
+          </p>
+          <p className="font-body text-white break-before-auto p-10">
+            <span className="font-bold">Mental grit</span> is crucial for boxing
+            because it builds resilience and perseverance, enabling boxers to
+            push through intense training sessions, endure physical pain, and
+            stay focused under pressure. It helps fighters maintain a strong
+            mindset, recover from setbacks, and stay motivated to achieve their
+            goals. In the ring, mental grit can make the difference between
+            giving up and finding the strength to keep fighting, ultimately
+            contributing to overall success and longevity in the sport.
+          </p>
+        </div>
+
+        <div className="mt-32">
+          <p className="text-center text-3xl font-body font-bold text-white">
+            Confidence and Self-Belief
+          </p>
+          <p className="font-body text-white break-before-auto p-10">
+            <span className="font-bold">Building self-confidence</span> is key.
+            Mental toughness encourages you to believe in your potential,
+            boosting your self-esteem and helping you face opponents with
+            assurance.
+          </p>
+          <div className="bg-white rounded-full p-2 mx-24 mb-10">
+            <Image
+              className="rounded-full"
+              src={FemaleBoxer}
+              alt="Female Boxer"
+            ></Image>
+          </div>
+        </div>
+      </div>
+      <div className=" bg-gray-600 flex-col flex items-center justify-center">
+        {/* change the background color of the parent div */}
+        <div className="">
+          <Image src={MaleBoxer} alt="Male Boxers"></Image>
+        </div>
       </div>
     </>
   );
