@@ -23,62 +23,48 @@ const Boxingclient = () => {
 
   useGSAP(() => {});
 
-  interface Item {
-    img: string | StaticImageData;
-    description: string;
-    listheader: string[];
-    listdes: string[];
-  }
+  // interface Item {
+  //   img: string | StaticImageData;
+  //   description: string;
+  //   listheader: string[];
+  //   listdes: string[];
+  // }
 
-  interface Items {
-    [key: string]: Item;
-  }
+  // interface Items {
+  //   [key: string]: Item;
+  // }
 
-  const items: Items = {
-    Stance: {
-      img: Boxingsvg,
-      description: "FootWork and Stance",
-      listheader: ["Stance", "Footwork", "Drills", "Conditioning"],
-      listdes: [
-        "Feet shoulder-width apart",
-        "Balanced weight",
-        "Step in all directions",
-        "Pivot, shuffle, slide",
-        "Shadowboxing",
-        "Ladder and cone drills",
-        "Skipping rope",
-        "Leg strength exercises",
-      ],
-    },
-    offense: {
-      img: Boxing,
-      description: "Offensive Weapons",
-      listheader: ["Jabs", "Cross", "Hook"],
-      listdes: [
-        "A quick, straight punch with the lead hand to maintain distance and set up combinations.",
-        "A powerful, straight punch with the rear hand, following a jab, to deliver maximum impact.",
-        "A semi-circular punch with the lead or rear hand targeting the side of the opponent's head or body.",
-        "An upward punch with the rear hand, aimed at the opponent's chin.",
-      ],
-    },
-    // heavy: {
-    //   img: Heavybag,
-    //   description: "Will Work on Heavy Bags",
-    // },
-    // boxingclock: {
-    //   img: Clock,
-    //   description: "Will Only be for 30-45 mins of training",
-    // },
-  };
+  // const items: Items = {
+  //   Stance: {
+  //     img: Boxingsvg,
+  //     description: "FootWork and Stance",
+  //     listheader: ["Stance", "Footwork", "Drills", "Conditioning"],
+  //     listdes: [
+  //       "Feet shoulder-width apart",
+  //       "Balanced weight",
+  //       "Step in all directions",
+  //       "Pivot, shuffle, slide",
+  //       "Shadowboxing",
+  //       "Ladder and cone drills",
+  //       "Skipping rope",
+  //       "Leg strength exercises",
+  //     ],
+  //     groupSize: 2,
+  //   },
+  //   offense: {
+  //     img: Boxing,
+  //     description: "Jabs, Cross, Hooks",
+  //   },
+  //   heavy: {
+  //     img: Heavybag,
+  //     description: "Will Work on Heavy Bags",
+  //   },
+  //   boxingclock: {
+  //     img: Clock,
+  //     description: "Will Only be for 30-45 mins of training",
+  //   },
+  // };
 
-  const groupListDes = (listdes, groupSize) => {
-    const groups = [];
-    for (let i = 0; i < listdes.length; i += groupSize) {
-      groups.push(listdes.slice(i, i + groupSize));
-    }
-    return groups;
-  };
-  const listDesGroups = groupListDes(items.Stance.listdes, 2);
   return (
     <>
       <nav className="bg-black">
@@ -198,42 +184,154 @@ const Boxingclient = () => {
           </div>
         </div>
       </div>
-      <div className="mt-10 flex flex-col justify-center items-center">
-        <p className="mb-5 text-white text-center font-bold font-body text-3xl p-4">
-          What will go on in the Morning Class{" "}
-        </p>
-        <div ref={cardsRef} className="">
-          {Object.keys(items).map((key, index) => (
-            <div key={index} className="bg-white rounded-xl h-fit w-64 my-5 ">
-              <div className="flex flex-col justify-center items-center">
-                <Image
-                  className="h-24 mt-5"
-                  src={items[key].img}
-                  alt={`${key} logo`}
-                ></Image>
-              </div>
-              <div className="">
-                <p className="text-center text-black">
-                  {items[key].description}
-                </p>
 
+      {/* Cards  */}
+      <div className="mt-10 flex flex-col justify-center items-center">
+        <div ref={cardsRef} className="">
+          {/* copy div below */}
+          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+            <div className="flex flex-col justify-center items-center">
+              <Image className="h-24 mt-5" src={Boxingsvg} alt=""></Image>
+              <div className="">
+                <p className="text-center text-black">FootWork and Stance</p>
                 <ul className="p-2">
-                  {items.Stance.listheader.map((header, idx) => (
-                    <li key={idx} className="flex flex-col mb-2">
-                      <strong>{header}:</strong>
-                      <ul className="list-disc list-inside pl-4">
-                        {listDesGroups[idx]?.map((des, desIdx) => (
-                          <li key={desIdx}>{des}</li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
+                  <li className="flex flex-col mb-2">
+                    <strong>Stance</strong>
+                    {/* Header */}
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Feet shoulder-width apart</li>
+                      <li>Balanced weight</li>
+                      {/* Li des */}
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Footwork</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Step in all directions</li>
+                      <li>Pivot, shuffle, slide</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Drills</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Shadowboxing</li>
+                      <li>Ladder and cone drills</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Conditioning</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Skipping rope</li>
+                      <li>Leg strength exercises</li>
+                    </ul>
+                  </li>
                 </ul>
               </div>
             </div>
-          ))}
+          </div>
+          {/* Card 2 */}
+          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+            <div className="flex flex-col justify-center items-center">
+              <Image className="h-24 mt-5" src={Boxing} alt=""></Image>
+              <div className="">
+                <p className="text-center text-black">Offense</p>
+                <ul className="p-2">
+                  <li className="flex flex-col mb-2">
+                    <strong>Jab</strong>
+                    {/* Header */}
+                    <ul className="list-disc list-inside pl-4">
+                      <li>A quick, straight punch with the lead hand</li>
+                      {/* Li des */}
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Cross</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>A powerful, straight punch with the rear hand.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong className="">Hook</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>A semi-circular punch with the lead or rear hand.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Overhand</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>
+                        A punch thrown with the rear hand in an arching motion,
+                        aimed at the opponent's head.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Body Shot</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>
+                        Any punch aimed at the opponent's torso to weaken their
+                        stamina.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/* Card 3 */}
+          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+            <div className="flex flex-col justify-center items-center">
+              <Image className="h-24 mt-5" src={Heavybag} alt=""></Image>
+              {/* Make this about defense  */}
+              <div className="">
+                <p className="text-center text-black">Defense Techniques</p>
+                <ul className="p-2">
+                  <li className="flex flex-col mb-2">
+                    <strong>Slipping</strong>
+                    {/* Header */}
+                    <ul className="list-disc list-inside pl-4">
+                      <li>
+                        {" "}
+                        Move your head to the side to avoid punches. Quite
+                        Simple
+                      </li>
+                      {/* Li des */}
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Bobbing</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>
+                        Bend your knees and move your body up and down to dodge
+                        punches.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong className="">Weaving</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li> Move your head in a U-shape under punches.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Blocking</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Use your gloves and arms to block punches.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Parrying</strong>
+                    <ul className="list-disc list-inside pl-4">
+                      <li>Deflect punches with your hands.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
       <div className="flex flex-col items-center justify-center mt-32">
         <div className="bg-white rounded-full p-2 m-10">
           <Image
@@ -242,6 +340,7 @@ const Boxingclient = () => {
             alt="Mental Toughness"
           ></Image>
         </div>
+
         <div className="">
           <p className="text-center text-3xl font-body font-bold text-white">
             Mental Tenedacy{" "}
