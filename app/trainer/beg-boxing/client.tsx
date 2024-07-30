@@ -50,10 +50,17 @@ const Boxingclient = () => {
         "Leg strength exercises",
       ],
     },
-    // offense: {
-    //   img: Boxing,
-    //   description: "Jabs, Cross, Hooks",
-    // },
+    offense: {
+      img: Boxing,
+      description: "Offensive Weapons",
+      listheader: ["Jabs", "Cross", "Hook"],
+      listdes: [
+        "A quick, straight punch with the lead hand to maintain distance and set up combinations.",
+        "A powerful, straight punch with the rear hand, following a jab, to deliver maximum impact.",
+        "A semi-circular punch with the lead or rear hand targeting the side of the opponent's head or body.",
+        "An upward punch with the rear hand, aimed at the opponent's chin.",
+      ],
+    },
     // heavy: {
     //   img: Heavybag,
     //   description: "Will Work on Heavy Bags",
@@ -64,6 +71,14 @@ const Boxingclient = () => {
     // },
   };
 
+  const groupListDes = (listdes, groupSize) => {
+    const groups = [];
+    for (let i = 0; i < listdes.length; i += groupSize) {
+      groups.push(listdes.slice(i, i + groupSize));
+    }
+    return groups;
+  };
+  const listDesGroups = groupListDes(items.Stance.listdes, 2);
   return (
     <>
       <nav className="bg-black">
@@ -189,7 +204,7 @@ const Boxingclient = () => {
         </p>
         <div ref={cardsRef} className="">
           {Object.keys(items).map((key, index) => (
-            <div key={index} className="bg-white rounded-xl h-64 w-64 my-5 ">
+            <div key={index} className="bg-white rounded-xl h-fit w-64 my-5 ">
               <div className="flex flex-col justify-center items-center">
                 <Image
                   className="h-24 mt-5"
@@ -202,11 +217,15 @@ const Boxingclient = () => {
                   {items[key].description}
                 </p>
 
-                <ul className="p-6">
-                  {items[key].listheader.map((header, idx) => (
-                    <li key={idx} className="flex flex-row">
+                <ul className="p-2">
+                  {items.Stance.listheader.map((header, idx) => (
+                    <li key={idx} className="flex flex-col mb-2">
                       <strong>{header}:</strong>
-                      <p>{items[key].listdes[idx]}</p>
+                      <ul className="list-disc list-inside pl-4">
+                        {listDesGroups[idx]?.map((des, desIdx) => (
+                          <li key={desIdx}>{des}</li>
+                        ))}
+                      </ul>
                     </li>
                   ))}
                 </ul>
