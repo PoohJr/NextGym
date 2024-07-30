@@ -26,8 +26,8 @@ const Boxingclient = () => {
   interface Item {
     img: string | StaticImageData;
     description: string;
-    // listheader: string;
-    // listdes:string;
+    listheader: string[];
+    listdes: string[];
   }
 
   interface Items {
@@ -38,21 +38,30 @@ const Boxingclient = () => {
     Stance: {
       img: Boxingsvg,
       description: "FootWork and Stance",
-      // listheader: 'Stance:',
-      // listdes:
+      listheader: ["Stance", "Footwork", "Drills", "Conditioning"],
+      listdes: [
+        "Feet shoulder-width apart",
+        "Balanced weight",
+        "Step in all directions",
+        "Pivot, shuffle, slide",
+        "Shadowboxing",
+        "Ladder and cone drills",
+        "Skipping rope",
+        "Leg strength exercises",
+      ],
     },
-    offense: {
-      img: Boxing,
-      description: "Jabs, Cross, Hooks",
-    },
-    heavy: {
-      img: Heavybag,
-      description: "Will Work on Heavy Bags",
-    },
-    boxingclock: {
-      img: Clock,
-      description: "Will Only be for 30-45 mins of training",
-    },
+    // offense: {
+    //   img: Boxing,
+    //   description: "Jabs, Cross, Hooks",
+    // },
+    // heavy: {
+    //   img: Heavybag,
+    //   description: "Will Work on Heavy Bags",
+    // },
+    // boxingclock: {
+    //   img: Clock,
+    //   description: "Will Only be for 30-45 mins of training",
+    // },
   };
 
   return (
@@ -192,11 +201,14 @@ const Boxingclient = () => {
                 <p className="text-center text-black">
                   {items[key].description}
                 </p>
-                <ul>
-                  <li>
-                    {items[key].listheader}
-                    <p>{items[key].listdes}</p>
-                  </li>
+
+                <ul className="p-6">
+                  {items[key].listheader.map((header, idx) => (
+                    <li key={idx} className="flex flex-row">
+                      <strong>{header}:</strong>
+                      <p>{items[key].listdes[idx]}</p>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
