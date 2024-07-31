@@ -32,45 +32,47 @@ const interBoxing = () => {
   const items: Item[] = [
     {
       img: MaleBoxer,
-      lesson: "Combos",
-      Flesson: ["something", "nah"],
-      description: ["1", "2"],
+      lesson: "Technique Development",
+      Flesson: ["Advanced Punch Combinations", "nah"],
+      description: [
+        "Focus on more complex combinations (e.g., jab-cross-hook-uppercut).",
+        "2",
+      ],
       class_des: "Class des",
     },
     {
       img: MaleBoxer,
-      lesson: "Yurr",
-      Flesson: ["Motherfucker", "Smd"],
-      description: ["We 3 Spare", "4"],
+      lesson: "Sparring",
+      Flesson: ["Controlled Sparring Sessions", "Smd"],
+      description: ["Increased sparring frequency and intensity.", "4"],
       class_des: "class des 2",
     },
     {
       img: MaleBoxer,
-      lesson: "Yurr",
-      Flesson: ["Hello", "Bye"],
-      description: ["We Gotta Spare", "Mew"],
+      lesson: "Combination Drills",
+      Flesson: ["Drills"],
+      description: ["Partner drills focusing on timing and rhythm.", "Mew"],
       class_des: "class des 3",
     },
   ];
 
   useGSAP(() => {
-    let tl = gsap.timeline({
-      ease: "power1.out",
-      opacity: 0,
-      scrollTrigger: {
-        trigger: cardsRef.current.children,
-        start: "center center",
-      },
-    });
-
-    tl.from(cardsRef.current.children, {
-      duration: 1,
-      y: 100,
-      delay: 0.2,
-      opacity: 0,
-      stagger: 0.3,
-      ease: "power2.out",
-    });
+    // let tl = gsap.timeline({
+    //   ease: "power1.out",
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: cardsRef.current.children,
+    //     start: "center center",
+    //   },
+    // });
+    // tl.from(cardsRef.current.children, {
+    //   duration: 1,
+    //   y: 100,
+    //   delay: 0.2,
+    //   opacity: 0,
+    //   stagger: 0.3,
+    //   ease: "power2.out",
+    // });
   });
 
   // do the animation at home
@@ -300,9 +302,7 @@ Intermediate boxing classes are designed to challenge participants and push thei
                         <strong>{first}</strong>
                         {/* Header */}
                         <ul className="list-disc list-inside pl-4">
-                          {item.description.map((des, i) => (
-                            <li key={i}>{des}</li>
-                          ))}
+                          <li>{item.description[idx]}</li>
                           {/* Li des */}
                         </ul>
                       </li>
