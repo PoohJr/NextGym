@@ -21,8 +21,26 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 const Boxingclient = () => {
   const cardsRef = useRef(null);
 
-  useGSAP(() => {});
+  useGSAP(() => {
+    // let tl = gsap.timeline({
+    //   ease: "power1.out",
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: cardsRef.current.children,
+    //     start: "center center",
+    //   },
+    // });
+    // tl.from(cardsRef.current.children, {
+    //   duration: 1,
+    //   y: 100,
+    //   delay: 0.2,
+    //   opacity: 0,
+    //   stagger: 0.3,
+    //   ease: "power2.out",
+    // });
+  });
 
+  // do the animation at home
   return (
     <>
       <nav className="bg-black">
@@ -151,36 +169,60 @@ const Boxingclient = () => {
             <div className="flex flex-col justify-center items-center">
               <Image className="h-24 mt-5" src={Boxingsvg} alt=""></Image>
               <div className="">
-                <p className="text-center text-black">FootWork and Stance</p>
+                <p className="text-center text-black font-bold font-body">
+                  FootWork and Stance
+                </p>
                 <ul className="p-2">
                   <li className="flex flex-col mb-2">
-                    <strong>Stance</strong>
+                    <strong className="text-black font-bold font-body text-xl">
+                      Stance
+                    </strong>
                     {/* Header */}
                     <ul className="list-disc list-inside pl-4">
-                      <li>Feet shoulder-width apart</li>
-                      <li>Balanced weight</li>
+                      <li className="text-slate-800 font-body">
+                        Feet shoulder-width apart
+                      </li>
+                      <li className="text-slate-800 font-body">
+                        Balanced weight
+                      </li>
                       {/* Li des */}
                     </ul>
                   </li>
-                  <li>
-                    <strong>Footwork</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Footwork
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>Step in all directions</li>
-                      <li>Pivot, shuffle, slide</li>
+                      <li className="text-slate-800 font-body">
+                        Step in all directions
+                      </li>
+                      <li className="text-slate-800 font-body">
+                        Pivot, shuffle, slide
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Drills</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Drills
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>Shadowboxing</li>
-                      <li>Ladder and cone drills</li>
+                      <li className="text-slate-800 font-body">Shadowboxing</li>
+                      <li className="text-slate-800 font-body">
+                        Ladder and cone drills
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Conditioning</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Conditioning
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>Skipping rope</li>
-                      <li>Leg strength exercises</li>
+                      <li className="text-slate-800 font-body">
+                        Skipping rope
+                      </li>
+                      <li className="text-slate-800 font-body">
+                        Leg strength exercises
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -192,41 +234,59 @@ const Boxingclient = () => {
             <div className="flex flex-col justify-center items-center">
               <Image className="h-24 mt-5" src={Boxing} alt=""></Image>
               <div className="">
-                <p className="text-center text-black">Offense</p>
+                <p className="text-center text-black font-bold font-body">
+                  Offense
+                </p>
                 <ul className="p-2">
                   <li className="flex flex-col mb-2">
-                    <strong>Jab</strong>
+                    <strong className="text-black font-bold font-body text-xl">
+                      Jab
+                    </strong>
                     {/* Header */}
                     <ul className="list-disc list-inside pl-4">
-                      <li>A quick, straight punch with the lead hand</li>
+                      <li className="text-slate-800 font-body">
+                        A quick, straight punch with the lead hand
+                      </li>
                       {/* Li des */}
                     </ul>
                   </li>
-                  <li>
-                    <strong>Cross</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Cross
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>A powerful, straight punch with the rear hand.</li>
+                      <li className="text-slate-800 font-body">
+                        A powerful, straight punch with the rear hand.
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong className="">Hook</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Hook
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>A semi-circular punch with the lead or rear hand.</li>
+                      <li className="text-slate-800 font-body">
+                        A semi-circular punch with the lead or rear hand.
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Overhand</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Overhand
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>
+                      <li className="text-slate-800 font-body">
                         A punch thrown with the rear hand in an arching motion,
                         aimed at the opponent's head.
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Body Shot</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Body Shot
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>
+                      <li className="text-slate-800 font-body">
                         Any punch aimed at the opponent's torso to weaken their
                         stamina.
                       </li>
@@ -242,13 +302,17 @@ const Boxingclient = () => {
               <Image className="h-24 mt-5" src={Heavybag} alt=""></Image>
               {/* Make this about defense  */}
               <div className="">
-                <p className="text-center text-black">Defense Techniques</p>
+                <p className="text-center text-black font-bold font-body">
+                  Defense Techniques
+                </p>
                 <ul className="p-2">
                   <li className="flex flex-col mb-2">
-                    <strong>Slipping</strong>
+                    <strong className="text-black font-bold font-body text-xl">
+                      Slipping
+                    </strong>
                     {/* Header */}
                     <ul className="list-disc list-inside pl-4">
-                      <li>
+                      <li className="text-slate-800 font-body">
                         {" "}
                         Move your head to the side to avoid punches. Quite
                         Simple
@@ -256,31 +320,46 @@ const Boxingclient = () => {
                       {/* Li des */}
                     </ul>
                   </li>
-                  <li>
-                    <strong>Bobbing</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Bobbing
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>
+                      <li className="text-slate-800 font-body">
                         Bend your knees and move your body up and down to dodge
                         punches.
                       </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong className="">Weaving</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Weaving
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li> Move your head in a U-shape under punches.</li>
+                      <li className="text-slate-800 font-body">
+                        {" "}
+                        Move your head in a U-shape under punches.
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Blocking</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Blocking
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>Use your gloves and arms to block punches.</li>
+                      <li className="text-slate-800 font-body">
+                        Use your gloves and arms to block punches.
+                      </li>
                     </ul>
                   </li>
-                  <li>
-                    <strong>Parrying</strong>
+                  <li className="text-slate-800 font-body">
+                    <strong className="text-black font-bold font-body text-xl">
+                      Parrying
+                    </strong>
                     <ul className="list-disc list-inside pl-4">
-                      <li>Deflect punches with your hands.</li>
+                      <li className="text-slate-800 font-body">
+                        Deflect punches with your hands.
+                      </li>
                     </ul>
                   </li>
                 </ul>
@@ -336,7 +415,7 @@ const Boxingclient = () => {
 
         {/* <div className="m-5">
           <Link href={}>
-          <button className="btn btn-primary">Click to Sign up</button>
+            <button className="btn btn-primary">Click to Sign up</button>
           </Link>
         </div> */}
         {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
