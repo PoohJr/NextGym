@@ -11,12 +11,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
-import MaleBoxer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
 import Spar from "../../public/boxing-img/spar.svg";
+import Pads from "../../public/boxing-img/pads.svg";
+import Punch from "../../public/boxing-img/punch.svg";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
-const interBoxing = () => {
+const InterBoxing = () => {
   const cardsRef = useRef(null);
+  const endRef = useRef(null);
   interface Item {
     img: string | StaticImageData;
     lesson: string;
@@ -27,12 +29,12 @@ const interBoxing = () => {
 
   const items: Item[] = [
     {
-      img: MaleBoxer,
+      img: Punch,
       lesson: "Technique Development",
       Flesson: ["Advanced Punch Combinations"],
       description: [
         "Focus on more complex combinations (e.g., jab-cross-hook-uppercut).",
-        "2",
+        "Drills to improve speed, accuracy, and power.",
       ],
       class_des: "Class des",
     },
@@ -47,7 +49,7 @@ const interBoxing = () => {
       class_des: "class des 2",
     },
     {
-      img: MaleBoxer,
+      img: Pads,
       lesson: "Combination Drills",
       Flesson: ["Drills and Workouts"],
       description: [
@@ -59,25 +61,44 @@ const interBoxing = () => {
   ];
 
   useGSAP(() => {
-    // let tl = gsap.timeline({
-    //   ease: "power1.out",
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: cardsRef.current.children,
-    //     start: "center center",
-    //   },
-    // });
-    // tl.from(cardsRef.current.children, {
-    //   duration: 1,
-    //   y: 100,
-    //   delay: 0.2,
-    //   opacity: 0,
-    //   stagger: 0.3,
-    //   ease: "power2.out",
-    // });
+    let tl = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: cardsRef.current.children,
+        toggleActions: "play pause resume none",
+        start: "center center",
+      },
+    });
+    tl.from(cardsRef.current.children, {
+      duration: 1,
+      y: 100,
+      delay: 0.2,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out",
+    });
+
+    let tl2 = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: endRef.current.children,
+        start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+
+    tl2.from(endRef.current.children, {
+      duration: 1,
+      x: -100,
+      delay: 0.2,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out",
+    });
   });
 
-  // do the animation at home
   return (
     <>
       <nav className="bg-black">
@@ -290,20 +311,31 @@ const interBoxing = () => {
 Intermediate boxing classes are designed to challenge participants and push their skills to the next level. They require a higher level of fitness, technical skill, and mental preparation compared to beginner classes. */}
       {/* Cards  */}
       <div className="mt-10 flex flex-col justify-center items-center">
-        <div ref={cardsRef} className="">
+        <div ref={cardsRef} className="mt-32">
           {/* copy div below */}
           {items.map((item, index) => (
             <div key={index} className="bg-white rounded-xl h-fit w-64 my-5 ">
               <div className="flex flex-col justify-center items-center">
-                <Image className="h-24 mt-5" src={item.img} alt=""></Image>
+                <Image
+                  className="h-24 w-24 mt-5 m-3"
+                  src={item.img}
+                  alt=""
+                ></Image>
                 <div className="">
                   <div className="p-2">
                     {item.Flesson.map((first, idx) => (
                       <div key={idx} className="">
                         <ul className="list-disc list-inside pl-4">
-                          {first}
+                          <p className="text-center font-body font-bold text-slate-700">
+                            {first}
+                          </p>
                           {item.description.map((desc, descIdx) => (
-                            <li key={descIdx}>{desc}</li>
+                            <li
+                              className="text-slate-600 font-body "
+                              key={descIdx}
+                            >
+                              {desc}
+                            </li>
                           ))}
                         </ul>
                       </div>
@@ -326,62 +358,65 @@ Intermediate boxing classes are designed to challenge participants and push thei
             </div>
           ))}
         </div>
-      </div>
 
-      <div className="flex flex-col items-center justify-center mt-32">
-        <div className="bg-white rounded-full p-2 m-10">
-          <Image
-            className="rounded-full"
-            src={Mental}
-            alt="Mental Toughness"
-          ></Image>
-        </div>
+        <div className="flex flex-col items-center justify-center mt-52">
+          <div ref={endRef} className="">
+            <div className="bg-white rounded-full p-2 m-10">
+              <Image
+                className="rounded-full"
+                src={Mental}
+                alt="Mental Toughness"
+              ></Image>
+            </div>
 
-        <div className="">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Mental Tenedacy{" "}
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Mental grit</span> is crucial for boxing
-            because it builds resilience and perseverance, enabling boxers to
-            push through intense training sessions, endure physical pain, and
-            stay focused under pressure. It helps fighters maintain a strong
-            mindset, recover from setbacks, and stay motivated to achieve their
-            goals. In the ring, mental grit can make the difference between
-            giving up and finding the strength to keep fighting, ultimately
-            contributing to overall success and longevity in the sport.
-          </p>
-        </div>
+            <div className="">
+              <p className="text-center text-3xl font-body font-bold text-white">
+                Mental Tenedacy{" "}
+              </p>
+              <p className="font-body text-white break-before-auto p-10">
+                <span className="font-bold">Mental grit</span> is crucial for
+                boxing because it builds resilience and perseverance, enabling
+                boxers to push through intense training sessions, endure
+                physical pain, and stay focused under pressure. It helps
+                fighters maintain a strong mindset, recover from setbacks, and
+                stay motivated to achieve their goals. In the ring, mental grit
+                can make the difference between giving up and finding the
+                strength to keep fighting, ultimately contributing to overall
+                success and longevity in the sport.
+              </p>
+            </div>
 
-        <div className="mt-32">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Confidence and Self-Belief
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Building self-confidence</span> is key.
-            Mental toughness encourages you to believe in your potential,
-            boosting your self-esteem and helping you face opponents with
-            assurance.
-          </p>
-          <div className="bg-white rounded-full p-2 mx-24 mb-10">
-            <Image
-              className=" rounded-full"
-              src={FemaleBoxer}
-              alt="Female Boxer"
-            ></Image>
+            <div className="mt-32">
+              <p className="text-center text-3xl font-body font-bold text-white">
+                Confidence and Self-Belief
+              </p>
+              <p className="font-body text-white break-before-auto p-10">
+                <span className="font-bold">Building self-confidence</span> is
+                key. Mental toughness encourages you to believe in your
+                potential, boosting your self-esteem and helping you face
+                opponents with assurance.
+              </p>
+              <div className="bg-white rounded-full p-2 mx-24 mb-10">
+                <Image
+                  className=" rounded-full"
+                  src={FemaleBoxer}
+                  alt="Female Boxer"
+                ></Image>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* <div className="m-5">
+          {/* <div className="m-5">
           <Link href={}>
             <button className="btn btn-primary">Click to Sign up</button>
           </Link>
         </div> */}
-        {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+          {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+        </div>
       </div>
     </>
   );
 };
 // this has good pics
 // https://www.freepik.com/search?format=search&img=1&last_filter=img&last_value=1&type=vector
-export default interBoxing;
+export default InterBoxing;

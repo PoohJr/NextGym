@@ -9,13 +9,12 @@ import Logo from "../../public/gymlogo/logo.png";
 import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import Boxingsvg from "../../public/boxing-img/boxer-black-white-silhouette-vector-design-boxing-silhouette_1188713-997.svg";
-import Boxing from "../../public/boxing-img/img2.svg";
+import Boxingsvg from "../../public/boxing-img/jap.svg";
+import FootWork from "../../public/boxing-img/footwork.svg";
 import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
-import MaleBoxer from "../../public/boxing-img/boxers-males-boxing-sports-c7038a-1024.jpg";
-import Clock from "../../public/boxing-img/th-1845431758.svg";
+
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const Boxingclient = () => {
@@ -160,256 +159,265 @@ const Boxingclient = () => {
           </div>
         </div>
       </div>
-
-      {/* Cards  */}
-      <div className="mt-10 flex flex-col justify-center items-center">
-        <div ref={cardsRef} className="">
-          {/* copy div below */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Boxingsvg} alt=""></Image>
-              <div className="">
-                <p className="text-center text-black font-bold font-body">
-                  FootWork and Stance
-                </p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Stance
-                    </strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Feet shoulder-width apart
-                      </li>
-                      <li className="text-slate-800 font-body">
-                        Balanced weight
-                      </li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Footwork
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Step in all directions
-                      </li>
-                      <li className="text-slate-800 font-body">
-                        Pivot, shuffle, slide
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Drills
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">Shadowboxing</li>
-                      <li className="text-slate-800 font-body">
-                        Ladder and cone drills
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Conditioning
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Skipping rope
-                      </li>
-                      <li className="text-slate-800 font-body">
-                        Leg strength exercises
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+      <div className="">
+        {/* Above you can change tthis div to make this a col to row depending on vp */}
+        {/* Cards  */}
+        <div className="mt-10 flex flex-col justify-center items-center">
+          <div ref={cardsRef} className="">
+            {/* copy div below */}
+            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+              <div className="flex flex-col justify-center items-center">
+                <Image className="h-24 w-24 mt-5" src={FootWork} alt=""></Image>
+                <div className="">
+                  <p className="text-center text-black font-bold font-body">
+                    FootWork and Stance
+                  </p>
+                  <ul className="p-2">
+                    <li className="flex flex-col mb-2">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Stance
+                      </strong>
+                      {/* Header */}
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Feet shoulder-width apart
+                        </li>
+                        <li className="text-slate-800 font-body">
+                          Balanced weight
+                        </li>
+                        {/* Li des */}
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Footwork
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Step in all directions
+                        </li>
+                        <li className="text-slate-800 font-body">
+                          Pivot, shuffle, slide
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Drills
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Shadowboxing
+                        </li>
+                        <li className="text-slate-800 font-body">
+                          Ladder and cone drills
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Conditioning
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Skipping rope
+                        </li>
+                        <li className="text-slate-800 font-body">
+                          Leg strength exercises
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          {/* Card 2 */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Boxing} alt=""></Image>
-              <div className="">
-                <p className="text-center text-black font-bold font-body">
-                  Offense
-                </p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Jab
-                    </strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        A quick, straight punch with the lead hand
-                      </li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Cross
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        A powerful, straight punch with the rear hand.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Hook
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        A semi-circular punch with the lead or rear hand.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Overhand
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        A punch thrown with the rear hand in an arching motion,
-                        aimed at the opponent's head.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Body Shot
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Any punch aimed at the opponent's torso to weaken their
-                        stamina.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+              <div className="flex flex-col justify-center items-center">
+                <Image
+                  className="h-24 w-24 mt-5"
+                  src={Boxingsvg}
+                  alt=""
+                ></Image>
+                <div className="">
+                  <p className="text-center text-black font-bold font-body">
+                    Offense
+                  </p>
+                  <ul className="p-2">
+                    <li className="flex flex-col mb-2">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Jab
+                      </strong>
+                      {/* Header */}
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          A quick, straight punch with the lead hand
+                        </li>
+                        {/* Li des */}
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Cross
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          A powerful, straight punch with the rear hand.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Hook
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          A semi-circular punch with the lead or rear hand.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Overhand
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          A punch thrown with the rear hand in an arching
+                          motion, aimed at the opponent's head.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Body Shot
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Any punch aimed at the opponent's torso to weaken
+                          their stamina.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Heavybag} alt=""></Image>
-              {/* Make this about defense  */}
-              <div className="">
-                <p className="text-center text-black font-bold font-body">
-                  Defense Techniques
-                </p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Slipping
-                    </strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        {" "}
-                        Move your head to the side to avoid punches. Quite
-                        Simple
-                      </li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Bobbing
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Bend your knees and move your body up and down to dodge
-                        punches.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Weaving
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        {" "}
-                        Move your head in a U-shape under punches.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Blocking
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Use your gloves and arms to block punches.
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="text-slate-800 font-body">
-                    <strong className="text-black font-bold font-body text-xl">
-                      Parrying
-                    </strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li className="text-slate-800 font-body">
-                        Deflect punches with your hands.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
+              <div className="flex flex-col justify-center items-center">
+                <Image className="h-24 w-32 mt-5" src={Heavybag} alt=""></Image>
+                {/* Make this about defense  */}
+                <div className="">
+                  <p className="text-center text-black font-bold font-body">
+                    Defense Techniques
+                  </p>
+                  <ul className="p-2">
+                    <li className="flex flex-col mb-2">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Slipping
+                      </strong>
+                      {/* Header */}
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          {" "}
+                          Move your head to the side to avoid punches. Quite
+                          Simple
+                        </li>
+                        {/* Li des */}
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Bobbing
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Bend your knees and move your body up and down to
+                          dodge punches.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Weaving
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          {" "}
+                          Move your head in a U-shape under punches.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Blocking
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Use your gloves and arms to block punches.
+                        </li>
+                      </ul>
+                    </li>
+                    <li className="text-slate-800 font-body">
+                      <strong className="text-black font-bold font-body text-xl">
+                        Parrying
+                      </strong>
+                      <ul className="list-disc list-inside pl-4">
+                        <li className="text-slate-800 font-body">
+                          Deflect punches with your hands.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div className="flex flex-col items-center justify-center mt-32">
-        <div className="bg-white rounded-full p-2 m-10">
-          <Image
-            className="rounded-full"
-            src={Mental}
-            alt="Mental Toughness"
-          ></Image>
-        </div>
-
-        <div className="">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Mental Tenedacy{" "}
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Mental grit</span> is crucial for boxing
-            because it builds resilience and perseverance, enabling boxers to
-            push through intense training sessions, endure physical pain, and
-            stay focused under pressure. It helps fighters maintain a strong
-            mindset, recover from setbacks, and stay motivated to achieve their
-            goals. In the ring, mental grit can make the difference between
-            giving up and finding the strength to keep fighting, ultimately
-            contributing to overall success and longevity in the sport.
-          </p>
-        </div>
-
-        <div className="mt-32">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Confidence and Self-Belief
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Building self-confidence</span> is key.
-            Mental toughness encourages you to believe in your potential,
-            boosting your self-esteem and helping you face opponents with
-            assurance.
-          </p>
-          <div className="bg-white rounded-full p-2 mx-24 mb-10">
+        <div className="flex flex-col items-center justify-center mt-32">
+          <div className="bg-white rounded-full p-2 m-10">
             <Image
-              className=" rounded-full"
-              src={FemaleBoxer}
-              alt="Female Boxer"
+              className="rounded-full"
+              src={Mental}
+              alt="Mental Toughness"
             ></Image>
+          </div>
+
+          <div className="">
+            <p className="text-center text-3xl font-body font-bold text-white">
+              Mental Tenedacy{" "}
+            </p>
+            <p className="font-body text-white break-before-auto p-10">
+              <span className="font-bold">Mental grit</span> is crucial for
+              boxing because it builds resilience and perseverance, enabling
+              boxers to push through intense training sessions, endure physical
+              pain, and stay focused under pressure. It helps fighters maintain
+              a strong mindset, recover from setbacks, and stay motivated to
+              achieve their goals. In the ring, mental grit can make the
+              difference between giving up and finding the strength to keep
+              fighting, ultimately contributing to overall success and longevity
+              in the sport.
+            </p>
+          </div>
+
+          <div className="mt-32">
+            <p className="text-center text-3xl font-body font-bold text-white">
+              Confidence and Self-Belief
+            </p>
+            <p className="font-body text-white break-before-auto p-10">
+              <span className="font-bold">Building self-confidence</span> is
+              key. Mental toughness encourages you to believe in your potential,
+              boosting your self-esteem and helping you face opponents with
+              assurance.
+            </p>
+            <div className="bg-white rounded-full p-2 mx-24 mb-10">
+              <Image
+                className=" rounded-full"
+                src={FemaleBoxer}
+                alt="Female Boxer"
+              ></Image>
+            </div>
           </div>
         </div>
 
