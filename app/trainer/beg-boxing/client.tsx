@@ -23,48 +23,6 @@ const Boxingclient = () => {
 
   useGSAP(() => {});
 
-  // interface Item {
-  //   img: string | StaticImageData;
-  //   description: string;
-  //   listheader: string[];
-  //   listdes: string[];
-  // }
-
-  // interface Items {
-  //   [key: string]: Item;
-  // }
-
-  // const items: Items = {
-  //   Stance: {
-  //     img: Boxingsvg,
-  //     description: "FootWork and Stance",
-  //     listheader: ["Stance", "Footwork", "Drills", "Conditioning"],
-  //     listdes: [
-  //       "Feet shoulder-width apart",
-  //       "Balanced weight",
-  //       "Step in all directions",
-  //       "Pivot, shuffle, slide",
-  //       "Shadowboxing",
-  //       "Ladder and cone drills",
-  //       "Skipping rope",
-  //       "Leg strength exercises",
-  //     ],
-  //     groupSize: 2,
-  //   },
-  //   offense: {
-  //     img: Boxing,
-  //     description: "Jabs, Cross, Hooks",
-  //   },
-  //   heavy: {
-  //     img: Heavybag,
-  //     description: "Will Work on Heavy Bags",
-  //   },
-  //   boxingclock: {
-  //     img: Clock,
-  //     description: "Will Only be for 30-45 mins of training",
-  //   },
-  // };
-
   return (
     <>
       <nav className="bg-black">
