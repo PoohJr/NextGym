@@ -9,23 +9,19 @@ import Logo from "../../public/gymlogo/logo.png";
 import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import Boxingsvg from "../../public/boxing-img/boxer-black-white-silhouette-vector-design-boxing-silhouette_1188713-997.svg";
-import Boxing from "../../public/boxing-img/img2.svg";
-import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
 import MaleBoxer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
-import Clock from "../../public/boxing-img/th-1845431758.svg";
-import { it } from "node:test";
+import Spar from "../../public/boxing-img/spar.svg";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const interBoxing = () => {
   const cardsRef = useRef(null);
   interface Item {
     img: string | StaticImageData;
-    description: string[];
     lesson: string;
     Flesson: string[];
+    description: string[];
     class_des: string;
   }
 
@@ -33,7 +29,7 @@ const interBoxing = () => {
     {
       img: MaleBoxer,
       lesson: "Technique Development",
-      Flesson: ["Advanced Punch Combinations", "nah"],
+      Flesson: ["Advanced Punch Combinations"],
       description: [
         "Focus on more complex combinations (e.g., jab-cross-hook-uppercut).",
         "2",
@@ -41,17 +37,23 @@ const interBoxing = () => {
       class_des: "Class des",
     },
     {
-      img: MaleBoxer,
+      img: Spar,
       lesson: "Sparring",
-      Flesson: ["Controlled Sparring Sessions", "Smd"],
-      description: ["Increased sparring frequency and intensity.", "4"],
+      Flesson: ["Controlled Sparring Sessions"],
+      description: [
+        "Increased sparring frequency and intensity.",
+        "Focus on applying techniques in a live setting.",
+      ],
       class_des: "class des 2",
     },
     {
       img: MaleBoxer,
       lesson: "Combination Drills",
-      Flesson: ["Drills"],
-      description: ["Partner drills focusing on timing and rhythm.", "Mew"],
+      Flesson: ["Drills and Workouts"],
+      description: [
+        "Partner drills focusing on timing and rhythm.",
+        "Pad work with advanced combinations",
+      ],
       class_des: "class des 3",
     },
   ];
@@ -295,19 +297,30 @@ Intermediate boxing classes are designed to challenge participants and push thei
               <div className="flex flex-col justify-center items-center">
                 <Image className="h-24 mt-5" src={item.img} alt=""></Image>
                 <div className="">
-                  <p className="text-center text-black">{item.lesson}</p>
-                  <ul className="p-2">
+                  <div className="p-2">
+                    {item.Flesson.map((first, idx) => (
+                      <div key={idx} className="">
+                        <ul className="list-disc list-inside pl-4">
+                          {first}
+                          {item.description.map((desc, descIdx) => (
+                            <li key={descIdx}>{desc}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    {/*  
                     {item.Flesson.map((first, idx) => (
                       <li key={idx} className="flex flex-col mb-2">
-                        <strong>{first}</strong>
+                        <strong className="text-center">{first}</strong>
                         {/* Header */}
-                        <ul className="list-disc list-inside pl-4">
+                    {/* <ul className="list-disc list-inside pl-4">
                           <li>{item.description[idx]}</li>
                           {/* Li des */}
-                        </ul>
+                    {/* </ul>
                       </li>
-                    ))}
-                  </ul>
+                    ))} 
+                      */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -369,5 +382,6 @@ Intermediate boxing classes are designed to challenge participants and push thei
     </>
   );
 };
-
+// this has good pics
+// https://www.freepik.com/search?format=search&img=1&last_filter=img&last_value=1&type=vector
 export default interBoxing;
