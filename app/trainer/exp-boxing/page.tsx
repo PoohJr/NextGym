@@ -9,34 +9,68 @@ import Logo from "../../public/gymlogo/logo.png";
 import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import Boxingsvg from "../../public/boxing-img/boxer-black-white-silhouette-vector-design-boxing-silhouette_1188713-997.svg";
-import Boxing from "../../public/boxing-img/img2.svg";
-import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
-import MaleBoxer from "../../public/boxing-img/boxers-males-boxing-sports-c7038a-1024.jpg";
-import Clock from "../../public/boxing-img/th-1845431758.svg";
+import Spar from "../../public/boxing-img/spar.svg";
+import Pads from "../../public/boxing-img/pads.svg";
+import Punch from "../../public/boxing-img/punch.svg";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const ExpertBoxing = () => {
   const cardsRef = useRef(null);
+  const section = useRef(null);
+  const section2 = useRef(null);
+  interface Item {
+    img: string | StaticImageData;
+    lesson: string;
+    Flesson: string[];
+    description: string[];
+    class_des: string;
+  }
+
+  const items: Item[] = [
+    {
+      img: Punch,
+      lesson: "Technique Development",
+      Flesson: ["Advanced Punch Combinations"],
+      description: [
+        "Focus on more complex combinations (e.g., jab-cross-hook-uppercut).",
+        "Drills to improve speed, accuracy, and power.",
+      ],
+      class_des: "Class des",
+    },
+    {
+      img: Spar,
+      lesson: "Sparring",
+      Flesson: ["Controlled Sparring Sessions"],
+      description: [
+        "Increased sparring frequency and intensity.",
+        "Focus on applying techniques in a live setting.",
+      ],
+      class_des: "class des 2",
+    },
+    {
+      img: Pads,
+      lesson: "Combination Drills",
+      Flesson: ["Drills and Workouts"],
+      description: [
+        "Partner drills focusing on timing and rhythm.",
+        "Pad work with advanced combinations",
+      ],
+      class_des: "class des 3",
+    },
+  ];
 
   useGSAP(() => {
-    // gsap.from(cardsRef.current, {
-    //   opacity: 0,
-    //   scrollTrigger: {
-
-    //   }
-    // });
     let tl = gsap.timeline({
       ease: "power1.out",
       opacity: 0,
       scrollTrigger: {
         trigger: cardsRef.current.children,
+        toggleActions: "play pause resume none",
         start: "center center",
       },
     });
-
     tl.from(cardsRef.current.children, {
       duration: 1,
       y: 100,
@@ -45,9 +79,56 @@ const ExpertBoxing = () => {
       stagger: 0.3,
       ease: "power2.out",
     });
+
+    let tl2 = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: section.current,
+        start: "top top",
+        toggleActions: "play pause resume none",
+      },
+    });
+
+    tl2
+      .from(section.current, {
+        duration: 1,
+        x: -100,
+        opacity: 0,
+        ease: "power2.out",
+      })
+      .from("#mental", {
+        opacity: 0,
+        x: 50, // Add any other properties you want to animate
+      });
+
+    let tl3 = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: section.current,
+        start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+
+    tl3
+      .from("#sec2", {
+        x: -100,
+        opacity: 0,
+        delay: 0.2,
+        ease: "power2.out",
+      })
+      .from("#pic", {
+        duration: 1,
+        x: 100,
+        delay: 0.2,
+        opacity: 0,
+        stagger: 0.3,
+        ease: "power2.out",
+      });
   });
 
-  // do the animation at home
   return (
     <>
       <nav className="bg-black">
@@ -168,8 +249,6 @@ const ExpertBoxing = () => {
         </div>
       </div>
 
-      {/* Cards  */}
-
       {/* Expert boxing classes are designed for advanced practitioners who have mastered the basics and intermediate techniques. These classes focus on refining skills, advanced strategies, high-intensity conditioning, and preparation for competitive boxing. Here’s what might be involved:
 
 ### Technique Mastery
@@ -272,205 +351,121 @@ const ExpertBoxing = () => {
    - Recovery strategies including rest, massage, and physiotherapy.
 
 Expert boxing classes demand a high level of commitment, physical fitness, and technical skill. They are geared towards individuals preparing for competitive boxing or looking to achieve peak performance in the sport. */}
+      {/* Cards  */}
       <div className="mt-10 flex flex-col justify-center items-center">
-        <div ref={cardsRef} className="">
+        <div ref={cardsRef} className="mt-32">
           {/* copy div below */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Boxingsvg} alt=""></Image>
+          {items.map((item, index) => (
+            <div key={index} className="bg-white rounded-xl h-fit w-64 my-5 ">
+              <div className="flex flex-col justify-center items-center">
+                <Image
+                  className="h-24 w-24 mt-5 m-3"
+                  src={item.img}
+                  alt=""
+                ></Image>
+                <div className="">
+                  <div className="p-2">
+                    {item.Flesson.map((first, idx) => (
+                      <div key={idx} className="">
+                        <ul className="list-disc list-inside pl-4">
+                          <p className="text-center font-body font-bold text-slate-700">
+                            {first}
+                          </p>
+                          {item.description.map((desc, descIdx) => (
+                            <li
+                              className="text-slate-600 font-body "
+                              key={descIdx}
+                            >
+                              {desc}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                    {/*  
+                    {item.Flesson.map((first, idx) => (
+                      <li key={idx} className="flex flex-col mb-2">
+                        <strong className="text-center">{first}</strong>
+                        {/* Header */}
+                    {/* <ul className="list-disc list-inside pl-4">
+                          <li>{item.description[idx]}</li>
+                          {/* Li des */}
+                    {/* </ul>
+                      </li>
+                    ))} 
+                      */}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col items-center justify-center mt-52">
+          <div className="">
+            <div ref={section} className="">
+              <div className="bg-white rounded-full p-2 m-10">
+                <Image
+                  className="rounded-full"
+                  src={Mental}
+                  alt="Mental Toughness"
+                ></Image>
+              </div>
+
               <div className="">
-                <p className="text-center text-black">FootWork and Stance</p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong>Stance</strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Feet shoulder-width apart</li>
-                      <li>Balanced weight</li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Footwork</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Step in all directions</li>
-                      <li>Pivot, shuffle, slide</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Drills</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Shadowboxing</li>
-                      <li>Ladder and cone drills</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Conditioning</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Skipping rope</li>
-                      <li>Leg strength exercises</li>
-                    </ul>
-                  </li>
-                </ul>
+                <p className="text-center text-3xl font-body font-bold text-white">
+                  Mental Tenedacy{" "}
+                </p>
+                <p
+                  id="mental"
+                  className="font-body text-white break-before-auto p-10"
+                >
+                  <span className="font-bold">Mental grit</span> is crucial for
+                  boxing because it builds resilience and perseverance, enabling
+                  boxers to push through intense training sessions, endure
+                  physical pain, and stay focused under pressure. It helps
+                  fighters maintain a strong mindset, recover from setbacks, and
+                  stay motivated to achieve their goals. In the ring, mental
+                  grit can make the difference between giving up and finding the
+                  strength to keep fighting, ultimately contributing to overall
+                  success and longevity in the sport.
+                </p>
+              </div>
+            </div>
+
+            <div ref={section2} className="mt-32">
+              <div id="sec2" className="">
+                <p className="text-center text-3xl font-body font-bold text-white">
+                  Confidence and Self-Belief
+                </p>
+                <p className="font-body text-white break-before-auto p-10">
+                  <span className="font-bold">Building self-confidence</span> is
+                  key. Mental toughness encourages you to believe in your
+                  potential, boosting your self-esteem and helping you face
+                  opponents with assurance.
+                </p>
+              </div>
+              <div id="pic" className="bg-white rounded-full p-2 mx-24 mb-10">
+                <Image
+                  className=" rounded-full"
+                  src={FemaleBoxer}
+                  alt="Female Boxer"
+                ></Image>
               </div>
             </div>
           </div>
-          {/* Card 2 */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Boxing} alt=""></Image>
-              <div className="">
-                <p className="text-center text-black">Offense</p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong>Jab</strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li>A quick, straight punch with the lead hand</li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Cross</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>A powerful, straight punch with the rear hand.</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong className="">Hook</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>A semi-circular punch with the lead or rear hand.</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Overhand</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>
-                        A punch thrown with the rear hand in an arching motion,
-                        aimed at the opponent's head.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Body Shot</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>
-                        Any punch aimed at the opponent's torso to weaken their
-                        stamina.
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          {/* Card 3 */}
-          <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-            <div className="flex flex-col justify-center items-center">
-              <Image className="h-24 mt-5" src={Heavybag} alt=""></Image>
-              {/* Make this about defense  */}
-              <div className="">
-                <p className="text-center text-black">Defense Techniques</p>
-                <ul className="p-2">
-                  <li className="flex flex-col mb-2">
-                    <strong>Slipping</strong>
-                    {/* Header */}
-                    <ul className="list-disc list-inside pl-4">
-                      <li>
-                        {" "}
-                        Move your head to the side to avoid punches. Quite
-                        Simple
-                      </li>
-                      {/* Li des */}
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Bobbing</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>
-                        Bend your knees and move your body up and down to dodge
-                        punches.
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong className="">Weaving</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li> Move your head in a U-shape under punches.</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Blocking</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Use your gloves and arms to block punches.</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <strong>Parrying</strong>
-                    <ul className="list-disc list-inside pl-4">
-                      <li>Deflect punches with your hands.</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div className="flex flex-col items-center justify-center mt-32">
-        <div className="bg-white rounded-full p-2 m-10">
-          <Image
-            className="rounded-full"
-            src={Mental}
-            alt="Mental Toughness"
-          ></Image>
-        </div>
-
-        <div className="">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Mental Tenedacy{" "}
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Mental grit</span> is crucial for boxing
-            because it builds resilience and perseverance, enabling boxers to
-            push through intense training sessions, endure physical pain, and
-            stay focused under pressure. It helps fighters maintain a strong
-            mindset, recover from setbacks, and stay motivated to achieve their
-            goals. In the ring, mental grit can make the difference between
-            giving up and finding the strength to keep fighting, ultimately
-            contributing to overall success and longevity in the sport.
-          </p>
-        </div>
-
-        <div className="mt-32">
-          <p className="text-center text-3xl font-body font-bold text-white">
-            Confidence and Self-Belief
-          </p>
-          <p className="font-body text-white break-before-auto p-10">
-            <span className="font-bold">Building self-confidence</span> is key.
-            Mental toughness encourages you to believe in your potential,
-            boosting your self-esteem and helping you face opponents with
-            assurance.
-          </p>
-          <div className="bg-white rounded-full p-2 mx-24 mb-10">
-            <Image
-              className=" rounded-full"
-              src={FemaleBoxer}
-              alt="Female Boxer"
-            ></Image>
-          </div>
-        </div>
-
-        {/* <div className="m-5">
+          {/* <div className="m-5">
           <Link href={}>
             <button className="btn btn-primary">Click to Sign up</button>
           </Link>
         </div> */}
-        {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+          {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+        </div>
       </div>
     </>
   );
 };
-
+// this has good pics
+// https://www.freepik.com/search?format=search&img=1&last_filter=img&last_value=1&type=vector
 export default ExpertBoxing;

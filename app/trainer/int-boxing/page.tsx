@@ -99,27 +99,34 @@ const InterBoxing = () => {
       })
       .from("#mental", {
         opacity: 0,
-        x: 50, // Add any other properties you want to animate
+        x: 50,
       });
 
     let tl3 = gsap.timeline({
       ease: "power1.out",
       opacity: 0,
       scrollTrigger: {
-        trigger: section.current,
-        start: "center center",
+        trigger: section2.current,
+        start: "top",
         toggleActions: "play pause resume none",
       },
     });
 
-    tl3.from(section2.current, {
-      duration: 1,
-      x: 100,
-      delay: 0.2,
-      opacity: 0,
-      stagger: 0.3,
-      ease: "power2.out",
-    });
+    tl3
+      .from("#sec2", {
+        x: -100,
+        opacity: 0,
+        delay: 0.2,
+        ease: "power2.out",
+      })
+      .from("#pic", {
+        duration: 1,
+        x: 100,
+        delay: 0.2,
+        opacity: 0,
+        stagger: 0.3,
+        ease: "power2.out",
+      });
   });
 
   return (
@@ -332,6 +339,7 @@ const InterBoxing = () => {
    - Static stretching and light exercises to aid recovery.
 
 Intermediate boxing classes are designed to challenge participants and push their skills to the next level. They require a higher level of fitness, technical skill, and mental preparation compared to beginner classes. */}
+
       {/* Cards  */}
       <div className="mt-10 flex flex-col justify-center items-center">
         <div ref={cardsRef} className="mt-32">
@@ -414,17 +422,19 @@ Intermediate boxing classes are designed to challenge participants and push thei
               </div>
             </div>
 
-            <div ref={section2} className="mt-32">
-              <p className="text-center text-3xl font-body font-bold text-white">
-                Confidence and Self-Belief
-              </p>
-              <p className="font-body text-white break-before-auto p-10">
-                <span className="font-bold">Building self-confidence</span> is
-                key. Mental toughness encourages you to believe in your
-                potential, boosting your self-esteem and helping you face
-                opponents with assurance.
-              </p>
-              <div className="bg-white rounded-full p-2 mx-24 mb-10">
+            <div ref={section2} className="h-[700px] mt-52">
+              <div id="sec2" className="">
+                <p className="text-center text-3xl font-body font-bold text-white">
+                  Confidence and Self-Belief
+                </p>
+                <p className="font-body text-white break-before-auto p-10">
+                  <span className="font-bold">Building self-confidence</span> is
+                  key. Mental toughness encourages you to believe in your
+                  potential, boosting your self-esteem and helping you face
+                  opponents with assurance.
+                </p>
+              </div>
+              <div id="pic" className="bg-white rounded-full p-2 mx-24 mb-10">
                 <Image
                   className=" rounded-full"
                   src={FemaleBoxer}
