@@ -18,7 +18,8 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const InterBoxing = () => {
   const cardsRef = useRef(null);
-  const endRef = useRef(null);
+  const section = useRef(null);
+  const section2 = useRef(null);
   interface Item {
     img: string | StaticImageData;
     lesson: string;
@@ -83,15 +84,37 @@ const InterBoxing = () => {
       ease: "power1.out",
       opacity: 0,
       scrollTrigger: {
-        trigger: endRef.current.children,
+        trigger: section.current,
+        start: "top top",
+        toggleActions: "play pause resume none",
+      },
+    });
+
+    tl2
+      .from(section.current, {
+        duration: 1,
+        x: -100,
+        opacity: 0,
+        ease: "power2.out",
+      })
+      .from("#mental", {
+        opacity: 0,
+        x: 50, // Add any other properties you want to animate
+      });
+
+    let tl3 = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: section.current,
         start: "center center",
         toggleActions: "play pause resume none",
       },
     });
 
-    tl2.from(endRef.current.children, {
+    tl3.from(section2.current, {
       duration: 1,
-      x: -100,
+      x: 100,
       delay: 0.2,
       opacity: 0,
       stagger: 0.3,
@@ -360,33 +383,38 @@ Intermediate boxing classes are designed to challenge participants and push thei
         </div>
 
         <div className="flex flex-col items-center justify-center mt-52">
-          <div ref={endRef} className="">
-            <div className="bg-white rounded-full p-2 m-10">
-              <Image
-                className="rounded-full"
-                src={Mental}
-                alt="Mental Toughness"
-              ></Image>
+          <div className="">
+            <div ref={section} className="">
+              <div className="bg-white rounded-full p-2 m-10">
+                <Image
+                  className="rounded-full"
+                  src={Mental}
+                  alt="Mental Toughness"
+                ></Image>
+              </div>
+
+              <div className="">
+                <p className="text-center text-3xl font-body font-bold text-white">
+                  Mental Tenedacy{" "}
+                </p>
+                <p
+                  id="mental"
+                  className="font-body text-white break-before-auto p-10"
+                >
+                  <span className="font-bold">Mental grit</span> is crucial for
+                  boxing because it builds resilience and perseverance, enabling
+                  boxers to push through intense training sessions, endure
+                  physical pain, and stay focused under pressure. It helps
+                  fighters maintain a strong mindset, recover from setbacks, and
+                  stay motivated to achieve their goals. In the ring, mental
+                  grit can make the difference between giving up and finding the
+                  strength to keep fighting, ultimately contributing to overall
+                  success and longevity in the sport.
+                </p>
+              </div>
             </div>
 
-            <div className="">
-              <p className="text-center text-3xl font-body font-bold text-white">
-                Mental Tenedacy{" "}
-              </p>
-              <p className="font-body text-white break-before-auto p-10">
-                <span className="font-bold">Mental grit</span> is crucial for
-                boxing because it builds resilience and perseverance, enabling
-                boxers to push through intense training sessions, endure
-                physical pain, and stay focused under pressure. It helps
-                fighters maintain a strong mindset, recover from setbacks, and
-                stay motivated to achieve their goals. In the ring, mental grit
-                can make the difference between giving up and finding the
-                strength to keep fighting, ultimately contributing to overall
-                success and longevity in the sport.
-              </p>
-            </div>
-
-            <div className="mt-32">
+            <div ref={section2} className="mt-32">
               <p className="text-center text-3xl font-body font-bold text-white">
                 Confidence and Self-Belief
               </p>
