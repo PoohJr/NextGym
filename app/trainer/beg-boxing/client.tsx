@@ -13,9 +13,29 @@ import Boxingsvg from "../../public/boxing-img/jap.svg";
 import FootWork from "../../public/boxing-img/footwork.svg";
 import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
-import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
+import FemaleBoxer from "../../public/boxing-img/female-fight.jpg";
+import BoxingGlove from "../../public/boxing-img/boxing-glove.svg";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
+
+interface Items {
+  img: string | StaticImageData;
+  heading: string;
+  des: string;
+}
+
+const items: Items[] = [
+  {
+    img: FootWork,
+    heading: "Hello",
+    des: "I hate MY MOm",
+  },
+  {
+    img: Heavybag,
+    heading: "HeavyBithc",
+    des: "Job",
+  },
+];
 
 const Boxingclient = () => {
   const cardsRef = useRef(null);
@@ -45,7 +65,7 @@ const Boxingclient = () => {
       <nav className="bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
-            href="./"
+            href=""
             className=" cursor-pointer flex items-center space-x-3 rtl:space-x-reverse"
           >
             <Image
@@ -79,7 +99,7 @@ const Boxingclient = () => {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-black dark:border-gray-700">
               <li className="font-body text-white">
                 <Link
                   href=""
@@ -92,7 +112,7 @@ const Boxingclient = () => {
               <li className="font-body text-white">
                 <a
                   href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-gray-900 rounded  md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 delay-100 ease-in-out dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   About
                 </a>
@@ -100,7 +120,7 @@ const Boxingclient = () => {
               <li className="font-body text-white">
                 <a
                   href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-gray-900 rounded  md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 delay-100 ease-in-out dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Services
                 </a>
@@ -108,7 +128,7 @@ const Boxingclient = () => {
               <li className="font-body text-white">
                 <a
                   href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-gray-900 rounded  md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 delay-100 ease-in-out dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Pricing
                 </a>
@@ -116,7 +136,7 @@ const Boxingclient = () => {
               <li className="font-body text-white">
                 <a
                   href="#"
-                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                  className="block py-2 px-3 text-gray-900 rounded  md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-orange-600 delay-100 ease-in-out dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >
                   Contact
                 </a>
@@ -126,25 +146,25 @@ const Boxingclient = () => {
         </div>
       </nav>
 
-      <div className="h-[800px] bg-white">
+      <div className="h-screen bg-black">
         <div className="flex justify-center relative">
           <div className="flex flex-col items-center">
-            <div className="w-screen h-36 bg-slate-900 absolute top-[45%] left-0 "></div>
+            {/* <div className="w-screen h-36  absolute top-[45%] left-0 "></div> */}
             <div className="relative z-10 mt-16 p-3">
-              <div className="rounded-full bg-black p-3 h-84 w-64 flex items-center justify-center">
+              <div className="rounded-full p-3 h-84 xs:w-64 md:max-maxvp:w-96 flex items-center justify-center">
                 <Image
-                  className="rounded-full h-72 w-64"
+                  className="border-white xs:w-64 md:max-maxvp:w-96"
                   src={GymTrainer}
                   alt="Gym Trainer"
                 />
               </div>
               <div className="flex justify-center">
-                <div className=" absolute top-72 bg-slate-900  p-4 h-72 w-80 z-20">
-                  <div className="break-words">
-                    <p className="text-center mt-3 font-body text-3xl text-white font-bold">
+                <div className="rounded-2xl absolute top-72 bg-white roun p-4 h-72 w-80 z-20">
+                  <div className="break-words ">
+                    <p className="text-center mt-3 font-body text-3xl text-black font-bol d">
                       Boxing
                     </p>
-                    <p className="mt-2 p-1 text-white">
+                    <p className="mt-2 p-1 text-black">
                       Boxing is a combat sport where two fighters use their
                       fists to score points or knock out their opponent. It
                       improves physical fitness, strength, and mental toughness.
@@ -153,232 +173,50 @@ const Boxingclient = () => {
                     </p>
                   </div>
                 </div>
-                <div className="absolute top-96 right-1 bg-black h-64 w-80 z-10"></div>
+                {/* <div className="rounded-2xl absolute top-96 right-1 bg-red-400 h-64 w-80 z-10"></div> */}
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="">
-        {/* Above you can change tthis div to make this a col to row depending on vp */}
-        {/* Cards  */}
-        <div className="mt-10 flex flex-col justify-center items-center">
-          <div ref={cardsRef} className="">
-            {/* copy div below */}
-            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-              <div className="flex flex-col justify-center items-center">
-                <Image className="h-24 w-24 mt-5" src={FootWork} alt=""></Image>
-                <div className="">
-                  <p className="text-center text-black font-bold font-body">
-                    FootWork and Stance
-                  </p>
-                  <ul className="p-2">
-                    <li className="flex flex-col mb-2">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Stance
-                      </strong>
-                      {/* Header */}
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Feet shoulder-width apart
-                        </li>
-                        <li className="text-slate-800 font-body">
-                          Balanced weight
-                        </li>
-                        {/* Li des */}
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Footwork
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Step in all directions
-                        </li>
-                        <li className="text-slate-800 font-body">
-                          Pivot, shuffle, slide
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Drills
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Shadowboxing
-                        </li>
-                        <li className="text-slate-800 font-body">
-                          Ladder and cone drills
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Conditioning
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Skipping rope
-                        </li>
-                        <li className="text-slate-800 font-body">
-                          Leg strength exercises
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {/* Card 2 */}
-            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-              <div className="flex flex-col justify-center items-center">
-                <Image
-                  className="h-24 w-24 mt-5"
-                  src={Boxingsvg}
-                  alt=""
-                ></Image>
-                <div className="">
-                  <p className="text-center text-black font-bold font-body">
-                    Offense
-                  </p>
-                  <ul className="p-2">
-                    <li className="flex flex-col mb-2">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Jab
-                      </strong>
-                      {/* Header */}
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          A quick, straight punch with the lead hand
-                        </li>
-                        {/* Li des */}
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Cross
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          A powerful, straight punch with the rear hand.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Hook
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          A semi-circular punch with the lead or rear hand.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Overhand
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          A punch thrown with the rear hand in an arching
-                          motion, aimed at the opponent's head.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Body Shot
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Any punch aimed at the opponent's torso to weaken
-                          their stamina.
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {/* Card 3 */}
-            <div className="bg-white rounded-xl h-fit w-64 my-5 ">
-              <div className="flex flex-col justify-center items-center">
-                <Image className="h-24 w-32 mt-5" src={Heavybag} alt=""></Image>
-                {/* Make this about defense  */}
-                <div className="">
-                  <p className="text-center text-black font-bold font-body">
-                    Defense Techniques
-                  </p>
-                  <ul className="p-2">
-                    <li className="flex flex-col mb-2">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Slipping
-                      </strong>
-                      {/* Header */}
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          {" "}
-                          Move your head to the side to avoid punches. Quite
-                          Simple
-                        </li>
-                        {/* Li des */}
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Bobbing
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Bend your knees and move your body up and down to
-                          dodge punches.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Weaving
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          {" "}
-                          Move your head in a U-shape under punches.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Blocking
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Use your gloves and arms to block punches.
-                        </li>
-                      </ul>
-                    </li>
-                    <li className="text-slate-800 font-body">
-                      <strong className="text-black font-bold font-body text-xl">
-                        Parrying
-                      </strong>
-                      <ul className="list-disc list-inside pl-4">
-                        <li className="text-slate-800 font-body">
-                          Deflect punches with your hands.
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div className="flex flex-col items-center justify-center mt-32">
-          <div className="bg-white rounded-full p-2 m-10">
+      {/* Above you can change tthis div to make this a col to row depending on vp */}
+      {/* Cards  */}
+      <div className="bg-black pt-10 flex flex-col justify-center items-center">
+        <div ref={cardsRef} className="">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className=" bg-orange-500 h-fit w-52 my-5 rounded-xl p-5"
+            >
+              <div className="flex justify-start p-8">
+                <Image
+                  className="h-10 w-10"
+                  src={item.img}
+                  alt="Heading"
+                ></Image>
+              </div>
+              <div className="pl-4">
+                <p className=" text-2xl text-white">{item.heading}</p>
+                <p className="text-white break-before-auto">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex
+                  ducimus, est at mollitia officiis quo? Similique, ad impedit!
+                  Et dolores cum adipisci molestias fuga deleniti similique
+                  nostrum amet dignissimos!
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-black">
+        <div
+          className="xs:flex xs:flex-col xs:items-center xs:justify-center
+         xs:pt-32  md:grid md:grid-cols-2 md:gap-2"
+        >
+          <div className="rounded-full p-2 m-10">
             <Image
-              className="rounded-full"
+              className="border-8 border-slate-500 rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px]"
               src={Mental}
               alt="Mental Toughness"
             ></Image>
@@ -388,7 +226,7 @@ const Boxingclient = () => {
             <p className="text-center text-3xl font-body font-bold text-white">
               Mental Tenedacy{" "}
             </p>
-            <p className="font-body text-white break-before-auto p-10">
+            <p className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10">
               <span className="font-bold">Mental grit</span> is crucial for
               boxing because it builds resilience and perseverance, enabling
               boxers to push through intense training sessions, endure physical
@@ -405,19 +243,19 @@ const Boxingclient = () => {
             <p className="text-center text-3xl font-body font-bold text-white">
               Confidence and Self-Belief
             </p>
-            <p className="font-body text-white break-before-auto p-10">
+            <p className="lg:max-maxvp:text-3xl md:text-xl font-body text-white break-before-auto p-10">
               <span className="font-bold">Building self-confidence</span> is
               key. Mental toughness encourages you to believe in your potential,
               boosting your self-esteem and helping you face opponents with
               assurance.
             </p>
-            <div className="bg-white rounded-full p-2 mx-24 mb-10">
-              <Image
-                className=" rounded-full"
-                src={FemaleBoxer}
-                alt="Female Boxer"
-              ></Image>
-            </div>
+          </div>
+          <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10">
+            <Image
+              className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
+              src={FemaleBoxer}
+              alt="Female Boxer"
+            ></Image>
           </div>
         </div>
 

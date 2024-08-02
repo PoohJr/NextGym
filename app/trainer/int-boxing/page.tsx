@@ -10,7 +10,7 @@ import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
-import FemaleBoxer from "../../public/boxing-img/female-boxer.jpg";
+import FemaleBoxer from "../../public/boxing-img/female-fight.jpg";
 import Spar from "../../public/boxing-img/spar.svg";
 import Pads from "../../public/boxing-img/pads.svg";
 import Punch from "../../public/boxing-img/punch.svg";
