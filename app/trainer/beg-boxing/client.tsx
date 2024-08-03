@@ -9,7 +9,7 @@ import Logo from "../../public/gymlogo/logo.png";
 import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
-import Boxingsvg from "../../public/boxing-img/jap.svg";
+import OrangeGlove from "../../public/boxing-img/orange-glove.svg";
 import FootWork from "../../public/boxing-img/footwork.svg";
 import Heavybag from "../../public/boxing-img/heavybag.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
@@ -29,6 +29,16 @@ const items: Items[] = [
     img: FootWork,
     heading: "Hello",
     des: "I hate MY MOm",
+  },
+  {
+    img: OrangeGlove,
+    heading: "HeavyBithc",
+    des: "Job",
+  },
+  {
+    img: Heavybag,
+    heading: "HeavyBithc",
+    des: "Job",
   },
   {
     img: Heavybag,
@@ -149,7 +159,6 @@ const Boxingclient = () => {
         <div className="h-screen">
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-              {/* <div className="w-screen h-36  absolute top-[45%] left-0 "></div> */}
               <div className="relative">
                 <Image
                   className="border-white h-[475px] w-full"
@@ -171,58 +180,34 @@ const Boxingclient = () => {
                     confidence, and stay disciplined.
                   </p>
                 </p>
-                <div className="flex justify-center mt-10">
+                <div className="flex justify-center">
                   <button className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100">
                     Join Now!
                   </button>
                   {/* add something to the button*/}
                 </div>
               </div>
-
-              {/* <div className="flex justify-center">
-                  <div className="rounded-2xl absolute top-72 bg-white roun p-4 h-72 w-80 z-20">
-                    <div className="break-words ">
-                      <p className="text-center mt-3 font-body text-3xl text-black font-bol d">
-                        Boxing
-                      </p>
-                      <p className="mt-2 p-1 text-black">
-                        Boxing is a combat sport where two fighters use their
-                        fists to score points or knock out their opponent. It
-                        improves physical fitness, strength, and mental
-                        toughness. For beginners, boxing offers a way to learn
-                        self-defense, build confidence, and stay disciplined.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl absolute top-96 right-1 bg-red-400 h-64 w-80 z-10"></div>
-                </div> */}
             </div>
           </div>
         </div>
 
-        {/* Above you can change tthis div to make this a col to row depending on vp */}
         {/* Cards  */}
-        <div className="xs:max-lg:my-96 bg-black pt-10 flex flex-col justify-center items-center">
-          <div ref={cardsRef} className="">
+        <div className="xs:max-lg:my-96 bg-white h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
+          <div ref={cardsRef} className="md:grid md:grid-cols-2">
             {items.map((item, index) => (
               <div
                 key={index}
-                className=" bg-orange-500 h-fit w-52 my-5 rounded-xl p-5"
+                className=" bg-orange-500 h-fit w-72 my-5 mx-8 rounded-xl p-5"
               >
-                <div className="flex justify-start p-8">
-                  <Image
-                    className="h-10 w-10"
-                    src={item.img}
-                    alt="Heading"
-                  ></Image>
+                <div className="bg-white rounded-full w-20 h-20 flex justify-center items-center">
+                  <Image className="h-10 w-10" src={item.img} alt="Heading" />
                 </div>
+
                 <div className="pl-4">
                   <p className=" text-2xl text-white">{item.heading}</p>
-                  <p className="text-white break-before-auto">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
-                    ex ducimus, est at mollitia officiis quo? Similique, ad
-                    impedit! Et dolores cum adipisci molestias fuga deleniti
-                    similique nostrum amet dignissimos!
+                  <p className="mt-1 text-white break-before-auto">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Asperiores dolores alias quis fugiat aspernatur explicabo?
                   </p>
                 </div>
               </div>
