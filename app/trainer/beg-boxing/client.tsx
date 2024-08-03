@@ -63,7 +63,7 @@ const Boxingclient = () => {
   return (
     <>
       <nav className="bg-black">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
           <Link
             href=""
             className=" cursor-pointer flex items-center space-x-3 rtl:space-x-reverse"
@@ -145,126 +145,147 @@ const Boxingclient = () => {
           </div>
         </div>
       </nav>
-
-      <div className="h-screen bg-black">
-        <div className="flex justify-center relative">
-          <div className="flex flex-col items-center">
-            {/* <div className="w-screen h-36  absolute top-[45%] left-0 "></div> */}
-            <div className="relative z-10 mt-16 p-3">
-              <div className="rounded-full p-3 h-84 xs:w-64 md:max-maxvp:w-96 flex items-center justify-center">
+      <div className="bg-black">
+        <div className="h-screen">
+          <div className="flex justify-center">
+            <div className="flex flex-col items-center">
+              {/* <div className="w-screen h-36  absolute top-[45%] left-0 "></div> */}
+              <div className="relative">
                 <Image
-                  className="border-white xs:w-64 md:max-maxvp:w-96"
+                  className="border-white h-[475px] w-full"
                   src={GymTrainer}
                   alt="Gym Trainer"
                 />
-              </div>
-              <div className="flex justify-center">
-                <div className="rounded-2xl absolute top-72 bg-white roun p-4 h-72 w-80 z-20">
-                  <div className="break-words ">
-                    <p className="text-center mt-3 font-body text-3xl text-black font-bol d">
-                      Boxing
-                    </p>
-                    <p className="mt-2 p-1 text-black">
-                      Boxing is a combat sport where two fighters use their
-                      fists to score points or knock out their opponent. It
-                      improves physical fitness, strength, and mental toughness.
-                      For beginners, boxing offers a way to learn self-defense,
-                      build confidence, and stay disciplined.
-                    </p>
-                  </div>
-                </div>
-                {/* <div className="rounded-2xl absolute top-96 right-1 bg-red-400 h-64 w-80 z-10"></div> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Above you can change tthis div to make this a col to row depending on vp */}
-      {/* Cards  */}
-      <div className="bg-black pt-10 flex flex-col justify-center items-center">
-        <div ref={cardsRef} className="">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className=" bg-orange-500 h-fit w-52 my-5 rounded-xl p-5"
-            >
-              <div className="flex justify-start p-8">
-                <Image
-                  className="h-10 w-10"
-                  src={item.img}
-                  alt="Heading"
-                ></Image>
-              </div>
-              <div className="pl-4">
-                <p className=" text-2xl text-white">{item.heading}</p>
-                <p className="text-white break-before-auto">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ex
-                  ducimus, est at mollitia officiis quo? Similique, ad impedit!
-                  Et dolores cum adipisci molestias fuga deleniti similique
-                  nostrum amet dignissimos!
+                <p className=" text-6xl text-white font-body absolute inset-0 pb-10 flex items-end justify-center">
+                  Gym Name
                 </p>
               </div>
+              <div className="break-words">
+                <p>
+                  {" "}
+                  <p className="mt-2 p-10 text-white font-body">
+                    Boxing is a combat sport where two fighters use their fists
+                    to score points or knock out their opponent. It improves
+                    physical fitness, strength, and mental toughness. For
+                    beginners, boxing offers a way to learn self-defense, build
+                    confidence, and stay disciplined.
+                  </p>
+                </p>
+                <div className="flex justify-center mt-10">
+                  <button className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100">
+                    Join Now!
+                  </button>
+                  {/* add something to the button*/}
+                </div>
+              </div>
+
+              {/* <div className="flex justify-center">
+                  <div className="rounded-2xl absolute top-72 bg-white roun p-4 h-72 w-80 z-20">
+                    <div className="break-words ">
+                      <p className="text-center mt-3 font-body text-3xl text-black font-bol d">
+                        Boxing
+                      </p>
+                      <p className="mt-2 p-1 text-black">
+                        Boxing is a combat sport where two fighters use their
+                        fists to score points or knock out their opponent. It
+                        improves physical fitness, strength, and mental
+                        toughness. For beginners, boxing offers a way to learn
+                        self-defense, build confidence, and stay disciplined.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl absolute top-96 right-1 bg-red-400 h-64 w-80 z-10"></div>
+                </div> */}
             </div>
-          ))}
+          </div>
         </div>
-      </div>
-      <div className="bg-black">
-        <div
-          className="xs:flex xs:flex-col xs:items-center xs:justify-center
+
+        {/* Above you can change tthis div to make this a col to row depending on vp */}
+        {/* Cards  */}
+        <div className="xs:max-lg:my-96 bg-black pt-10 flex flex-col justify-center items-center">
+          <div ref={cardsRef} className="">
+            {items.map((item, index) => (
+              <div
+                key={index}
+                className=" bg-orange-500 h-fit w-52 my-5 rounded-xl p-5"
+              >
+                <div className="flex justify-start p-8">
+                  <Image
+                    className="h-10 w-10"
+                    src={item.img}
+                    alt="Heading"
+                  ></Image>
+                </div>
+                <div className="pl-4">
+                  <p className=" text-2xl text-white">{item.heading}</p>
+                  <p className="text-white break-before-auto">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                    ex ducimus, est at mollitia officiis quo? Similique, ad
+                    impedit! Et dolores cum adipisci molestias fuga deleniti
+                    similique nostrum amet dignissimos!
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-black">
+          <div
+            className="xs:flex xs:flex-col xs:items-center xs:justify-center
          xs:pt-32  md:grid md:grid-cols-2 md:gap-2"
-        >
-          <div className="rounded-full p-2 m-10">
-            <Image
-              className="border-8 border-slate-500 rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px]"
-              src={Mental}
-              alt="Mental Toughness"
-            ></Image>
+          >
+            <div className="rounded-full p-2 m-10">
+              <Image
+                className="border-8 border-slate-500 rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px]"
+                src={Mental}
+                alt="Mental Toughness"
+              ></Image>
+            </div>
+
+            <div className="">
+              <p className="text-center text-3xl font-body font-bold text-white">
+                Mental Tenedacy{" "}
+              </p>
+              <p className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10">
+                <span className="font-bold">Mental grit</span> is crucial for
+                boxing because it builds resilience and perseverance, enabling
+                boxers to push through intense training sessions, endure
+                physical pain, and stay focused under pressure. It helps
+                fighters maintain a strong mindset, recover from setbacks, and
+                stay motivated to achieve their goals. In the ring, mental grit
+                can make the difference between giving up and finding the
+                strength to keep fighting, ultimately contributing to overall
+                success and longevity in the sport.
+              </p>
+            </div>
+
+            <div className="mt-32">
+              <p className="text-center text-3xl font-body font-bold text-white">
+                Confidence and Self-Belief
+              </p>
+              <p className="lg:max-maxvp:text-3xl md:text-xl font-body text-white break-before-auto p-10">
+                <span className="font-bold">Building self-confidence</span> is
+                key. Mental toughness encourages you to believe in your
+                potential, boosting your self-esteem and helping you face
+                opponents with assurance.
+              </p>
+            </div>
+            <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10">
+              <Image
+                className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
+                src={FemaleBoxer}
+                alt="Female Boxer"
+              ></Image>
+            </div>
           </div>
 
-          <div className="">
-            <p className="text-center text-3xl font-body font-bold text-white">
-              Mental Tenedacy{" "}
-            </p>
-            <p className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10">
-              <span className="font-bold">Mental grit</span> is crucial for
-              boxing because it builds resilience and perseverance, enabling
-              boxers to push through intense training sessions, endure physical
-              pain, and stay focused under pressure. It helps fighters maintain
-              a strong mindset, recover from setbacks, and stay motivated to
-              achieve their goals. In the ring, mental grit can make the
-              difference between giving up and finding the strength to keep
-              fighting, ultimately contributing to overall success and longevity
-              in the sport.
-            </p>
-          </div>
-
-          <div className="mt-32">
-            <p className="text-center text-3xl font-body font-bold text-white">
-              Confidence and Self-Belief
-            </p>
-            <p className="lg:max-maxvp:text-3xl md:text-xl font-body text-white break-before-auto p-10">
-              <span className="font-bold">Building self-confidence</span> is
-              key. Mental toughness encourages you to believe in your potential,
-              boosting your self-esteem and helping you face opponents with
-              assurance.
-            </p>
-          </div>
-          <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10">
-            <Image
-              className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
-              src={FemaleBoxer}
-              alt="Female Boxer"
-            ></Image>
-          </div>
-        </div>
-
-        {/* <div className="m-5">
+          {/* <div className="m-5">
           <Link href={}>
             <button className="btn btn-primary">Click to Sign up</button>
           </Link>
         </div> */}
-        {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+          {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+        </div>
       </div>
     </>
   );
