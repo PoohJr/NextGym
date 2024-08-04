@@ -71,12 +71,18 @@ const Boxingclient = () => {
   });
 
   // do the animation at home
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
-      <nav className="bg-black">
+      {/* <nav className="bg-black">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto ">
           <Link
-            href=""
+            href={"/"}
             className=" cursor-pointer flex items-center space-x-3 rtl:space-x-reverse"
           >
             <Image
@@ -86,11 +92,12 @@ const Boxingclient = () => {
             ></Image>
           </Link>
           <button
+            onClick={toggleMenu}
             data-collapse-toggle="navbar-default"
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
-            aria-expanded="false"
+            aria-expanded={isOpen}
           >
             <span className="sr-only">Open main menu</span>
             <svg
@@ -109,11 +116,14 @@ const Boxingclient = () => {
               />
             </svg>
           </button>
+          <div className="">
+
+          </div>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-black dark:border-gray-700">
               <li className="font-body text-white">
                 <Link
-                  href=""
+                  href={"/"}
                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
                   aria-current="page"
                 >
@@ -155,14 +165,76 @@ const Boxingclient = () => {
             </ul>
           </div>
         </div>
-      </nav>
+      </nav> */}
+      <div className="navbar bg-black">
+        <div className="navbar-start">
+          <Link href={"/"} className="">
+            <Image className="w-14 h-14" src={Logo} alt="Logo" />
+          </Link>
+        </div>
+        <div className="navbar-end">
+          <div className="hidden md:flex ">
+            <ul className="md:flex md:flex-row md:justify-evenly">
+              <li className="mx-4 hover:text-orange-500 transition-all ease-in-out delay-100 ">
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li className="mx-4 hover:text-orange-500 transition-all ease-in-out delay-100 ">
+                <Link href={"./"}>Go Back to Schedule</Link>
+              </li>
+              <li className="mx-4 hover:text-orange-500 transition-all ease-in-out delay-100 ">
+                <Link href={"/"}>FAQ</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="md:hidden dropdown">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost btn-circle"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h7"
+                />
+              </svg>
+            </div>
+            <ul
+              tabIndex={0}
+              className=" right-0 menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <Link href={"/"}>Home</Link>
+              </li>
+              <li>
+                <Link href={"./"}>Go Back to Schedule</Link>
+              </li>
+              <li>
+                <Link href={"/"}>FAQ</Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* NavBar ^ */}
+
+      {/* Content | */}
       <div className="bg-black">
         <div className="h-screen">
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
               <div className="relative">
                 <Image
-                  className="border-white h-[475px] w-full"
+                  className="border-white h-[475px] w-screen"
                   src={GymTrainer}
                   alt="Gym Trainer"
                 />
