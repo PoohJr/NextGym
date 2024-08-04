@@ -52,22 +52,22 @@ const Boxingclient = () => {
   const cardsRef = useRef(null);
 
   useGSAP(() => {
-    // let tl = gsap.timeline({
-    //   ease: "power1.out",
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: cardsRef.current.children,
-    //     start: "center center",
-    //   },
-    // });
-    // tl.from(cardsRef.current.children, {
-    //   duration: 1,
-    //   y: 100,
-    //   delay: 0.2,
-    //   opacity: 0,
-    //   stagger: 0.3,
-    //   ease: "power2.out",
-    // });
+    let tl = gsap.timeline({
+      ease: "power1.out",
+      opacity: 0,
+      scrollTrigger: {
+        trigger: cardsRef.current.children,
+        start: "center center",
+      },
+    });
+    tl.from(cardsRef.current.children, {
+      duration: 1,
+      y: 100,
+      delay: 0.2,
+      opacity: 0,
+      stagger: 0.3,
+      ease: "power2.out",
+    });
   });
 
   // do the animation at home
@@ -171,16 +171,14 @@ const Boxingclient = () => {
                 </p>
               </div>
               <div className="break-words">
-                <p>
-                  {" "}
-                  <p className="mt-2 p-10 text-white font-body">
-                    Boxing is a combat sport where two fighters use their fists
-                    to score points or knock out their opponent. It improves
-                    physical fitness, strength, and mental toughness. For
-                    beginners, boxing offers a way to learn self-defense, build
-                    confidence, and stay disciplined.
-                  </p>
+                <p className="mt-2 p-10 text-white font-body">
+                  Boxing is a combat sport where two fighters use their fists to
+                  score points or knock out their opponent. It improves physical
+                  fitness, strength, and mental toughness. For beginners, boxing
+                  offers a way to learn self-defense, build confidence, and stay
+                  disciplined.
                 </p>
+
                 <div className="flex justify-center">
                   <button className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100">
                     Join Now!
@@ -193,7 +191,7 @@ const Boxingclient = () => {
         </div>
 
         {/* Cards  */}
-        <div className=" xs:max-lg:my-52 bg-fixed bg-boxing h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
+        <div className=" xs:max-maxvp:mt-64 mb-10 bg-fixed bg-boxing h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
           <div ref={cardsRef} className="md:grid md:grid-cols-2">
             {items.map((item, index) => (
               <div
@@ -217,7 +215,7 @@ const Boxingclient = () => {
         <div className="bg-black">
           <div
             className="xs:flex xs:flex-col xs:items-center xs:justify-center
-         xs:pt-32  md:grid md:grid-cols-2 md:gap-2"
+          md:grid md:grid-cols-2 md:gap-2"
           >
             <div className="rounded-full p-2 m-10">
               <Image
@@ -244,18 +242,18 @@ const Boxingclient = () => {
               </p>
             </div>
 
-            <div className="mt-32">
+            <div className="xs:max-lg:mt-32 lg:max-maxvp:mt-52">
               <p className="text-center text-3xl font-body font-bold text-white">
                 Confidence and Self-Belief
               </p>
-              <p className="lg:max-maxvp:text-3xl md:text-xl font-body text-white break-before-auto p-10">
+              <p className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10">
                 <span className="font-bold">Building self-confidence</span> is
                 key. Mental toughness encourages you to believe in your
                 potential, boosting your self-esteem and helping you face
                 opponents with assurance.
               </p>
             </div>
-            <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10">
+            <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10 lg:max-maxvp:mt-52">
               <Image
                 className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
                 src={FemaleBoxer}
@@ -264,11 +262,11 @@ const Boxingclient = () => {
             </div>
           </div>
 
-          {/* <div className="m-5">
-          <Link href={}>
-            <button className="btn btn-primary">Click to Sign up</button>
-          </Link>
-        </div> */}
+          <div className="p-10 flex justify-center">
+            <Link href={"./"}>
+              <button className="btn btn-primary">Click to Sign up</button>
+            </Link>
+          </div>
           {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
         </div>
       </div>
