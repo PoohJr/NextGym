@@ -10,11 +10,12 @@ import GymTrainer from "../../public/boxing-img/side-view-kid-practicing-boxing.
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import OrangeGlove from "../../public/boxing-img/orange-glove.svg";
-import FootWork from "../../public/boxing-img/footwork.svg";
-import Heavybag from "../../public/boxing-img/heavybag.svg";
+import PunchBag from "../../public/boxing-img/PunchMan.svg";
+import Strength from "../../public/boxing-img/strength.svg";
 import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-fight.jpg";
-import BoxingGlove from "../../public/boxing-img/boxing-glove.svg";
+import Helmet from "../../public/boxing-img/helmet.svg";
+import BoxingBG from "../../public/boxing-img/boxing-background.jpeg";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
@@ -26,24 +27,24 @@ interface Items {
 
 const items: Items[] = [
   {
-    img: FootWork,
-    heading: "Hello",
-    des: "I hate MY MOm",
+    img: PunchBag,
+    heading: "Strength",
+    des: "Join our strength classes, designed for all levels to help you build power and stamina.",
   },
   {
     img: OrangeGlove,
-    heading: "HeavyBithc",
-    des: "Job",
+    heading: "Levels",
+    des: "We offer training programs ranging from beginner to advanced levels.",
   },
   {
-    img: Heavybag,
-    heading: "HeavyBithc",
-    des: "Job",
+    img: Helmet,
+    heading: "Gear",
+    des: "We provide top-quality gear and expert boxing lessons tailored for all skill levels. ",
   },
   {
-    img: Heavybag,
-    heading: "HeavyBithc",
-    des: "Job",
+    img: Strength,
+    heading: "Test Your Endurance",
+    des: "Enhance your endurance with our classes, tailored to meet your fitness goals.",
   },
 ];
 
@@ -192,7 +193,7 @@ const Boxingclient = () => {
         </div>
 
         {/* Cards  */}
-        <div className="xs:max-lg:my-96 bg-white h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
+        <div className=" xs:max-lg:my-52 bg-fixed bg-boxing h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
           <div ref={cardsRef} className="md:grid md:grid-cols-2">
             {items.map((item, index) => (
               <div
@@ -205,10 +206,9 @@ const Boxingclient = () => {
 
                 <div className="pl-4">
                   <p className=" text-2xl text-white">{item.heading}</p>
-                  <p className="mt-1 text-white break-before-auto">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Asperiores dolores alias quis fugiat aspernatur explicabo?
-                  </p>
+                  <h1 className="mt-1 text-white break-before-auto">
+                    {item.des}
+                  </h1>
                 </div>
               </div>
             ))}

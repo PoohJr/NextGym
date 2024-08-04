@@ -9,6 +9,12 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.bg-boxing {
+  background-image: url("https://images.pexels.com/photos/4761668/pexels-photo-4761668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-size: cover;
+  background-position: center;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
