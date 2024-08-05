@@ -16,8 +16,9 @@ import Mental from "../../public/boxing-img/boxing-4-1200x800-min-.jpg";
 import FemaleBoxer from "../../public/boxing-img/female-fight.jpg";
 import Helmet from "../../public/boxing-img/helmet.svg";
 import BoxingBG from "../../public/boxing-img/boxing-background.jpeg";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
+gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollToPlugin, TextPlugin);
 
 interface Items {
   img: string | StaticImageData;
@@ -50,6 +51,22 @@ const items: Items[] = [
 
 const Boxingclient = () => {
   const cardsRef = useRef(null);
+  const btnRef = useRef(null);
+
+  const btn = document.querySelector("#join");
+
+  useGSAP(() => {
+    const joinRef = btnRef.current;
+    if (joinRef) {
+      joinRef.addEventListener("click", () => {
+        gsap.to(window, {
+          duration: 1,
+          scrollBehavior: "smooth",
+          scrollTo: "#signup",
+        });
+      });
+    }
+  });
 
   useGSAP(() => {
     let tl = gsap.timeline({
@@ -71,11 +88,6 @@ const Boxingclient = () => {
   });
 
   // do the animation at home
-
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <>
@@ -165,7 +177,11 @@ const Boxingclient = () => {
                 </p>
 
                 <div className="flex justify-center">
-                  <button className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100">
+                  <button
+                    ref={btnRef}
+                    id="join"
+                    className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100"
+                  >
                     Join Now!
                   </button>
                   {/* add something to the button*/}
@@ -202,9 +218,9 @@ const Boxingclient = () => {
             className="xs:flex xs:flex-col xs:items-center xs:justify-center
           md:grid md:grid-cols-2 md:gap-2"
           >
-            <div className="rounded-full p-2 m-10">
+            <div className="rounded-xl p-2 m-10">
               <Image
-                className="border-8 border-slate-500 rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px]"
+                className="border-8 border-white rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72"
                 src={Mental}
                 alt="Mental Toughness"
               ></Image>
@@ -238,7 +254,7 @@ const Boxingclient = () => {
                 opponents with assurance.
               </p>
             </div>
-            <div className="md:flex md:justify-center rounded-full p-2 mx-24 mb-10 lg:max-maxvp:mt-52">
+            <div className="md:flex md:justify-center p-2 mx-24 mb-10 lg:max-maxvp:mt-52">
               <Image
                 className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
                 src={FemaleBoxer}
@@ -249,7 +265,9 @@ const Boxingclient = () => {
 
           <div className="p-10 flex justify-center">
             <Link href={"./"}>
-              <button className="btn btn-primary">Click to Sign up</button>
+              <button id="signup" className="btn btn-primary">
+                Click to Sign up
+              </button>
             </Link>
           </div>
           {/* MAKE A PAGE TO SIGN UP FOR CLASS */}

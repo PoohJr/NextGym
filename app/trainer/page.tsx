@@ -77,7 +77,7 @@ const initialSchedule: Schedule[] = [
     nameofcoach: "Bill",
     location: "address",
     time: "7:00am - 7:45am",
-    todo: "/trainer/beg-boxing",
+    todo: "/trainer/boxing",
   },
   {
     typeofclass: "Yoga",
