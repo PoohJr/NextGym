@@ -167,25 +167,26 @@ const Boxingclient = () => {
                   Gym Name
                 </p>
               </div>
-              <div className="break-words">
-                <p className="mt-2 p-10 text-white font-body">
-                  Boxing is a combat sport where two fighters use their fists to
-                  score points or knock out their opponent. It improves physical
-                  fitness, strength, and mental toughness. For beginners, boxing
-                  offers a way to learn self-defense, build confidence, and stay
-                  disciplined.
-                </p>
 
-                <div className="flex justify-center">
-                  <button
-                    ref={btnRef}
-                    id="join"
-                    className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100"
-                  >
-                    Join Now!
-                  </button>
-                  {/* add something to the button*/}
-                </div>
+              <div className=" mt-6 mb-4 bg-orange-500 w-96 rounded-2xl break-words">
+                <p className="p-4 text-white font-body">
+                  <span className="font-bold">Boxing</span> is a combat sport
+                  where two fighters use their fists to score points or knock
+                  out their opponent. It improves physical fitness, strength,
+                  and mental toughness. For beginners, boxing offers a way to
+                  learn self-defense, build confidence, and stay disciplined.
+                </p>
+              </div>
+
+              <div className="flex justify-center">
+                <button
+                  ref={btnRef}
+                  id="join"
+                  className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100"
+                >
+                  Join Now!
+                </button>
+                {/* add something to the button*/}
               </div>
             </div>
           </div>
