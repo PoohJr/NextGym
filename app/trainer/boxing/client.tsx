@@ -87,8 +87,18 @@ const Boxingclient = () => {
     });
   });
 
-  // do the animation at home
-
+  useGSAP(() => {
+    gsap.from("#mentalImg", {
+      opacity: 0,
+      x: 100,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        start: "center center",
+      },
+    });
+  });
+  // Make this run on scroll instead of immidaytley
   return (
     <>
       <div className="navbar bg-black">
@@ -178,7 +188,7 @@ const Boxingclient = () => {
                 </p>
               </div>
 
-              <div className="flex justify-center">
+              <div className="mt-4 flex justify-center">
                 <button
                   ref={btnRef}
                   id="join"
@@ -193,12 +203,12 @@ const Boxingclient = () => {
         </div>
 
         {/* Cards  */}
-        <div className=" xs:max-maxvp:mt-64 mb-10 bg-fixed bg-boxing h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
+        <div className=" mb-16 bg-fixed bg-boxing h-full pt-10 md:grid-cols-1 xs:flex xs:flex-col justify-center items-center">
           <div ref={cardsRef} className="md:grid md:grid-cols-2">
             {items.map((item, index) => (
               <div
                 key={index}
-                className=" bg-orange-500 h-fit w-72 my-5 mx-8 rounded-xl p-5"
+                className=" md:mb-20 xs:mb-20 bg-orange-500 h-fit w-72 my-5 mx-8 rounded-xl p-5"
               >
                 <div className="bg-white rounded-full w-20 h-20 flex justify-center items-center">
                   <Image className="h-10 w-10" src={item.img} alt="Heading" />
@@ -219,7 +229,7 @@ const Boxingclient = () => {
             className="xs:flex xs:flex-col xs:items-center xs:justify-center
           md:grid md:grid-cols-2 md:gap-2"
           >
-            <div className="rounded-xl p-2 m-10">
+            <div id="mentalImg" className="rounded-xl p-2 m-10">
               <Image
                 className="border-8 border-white rounded-full lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72"
                 src={Mental}
@@ -227,7 +237,7 @@ const Boxingclient = () => {
               ></Image>
             </div>
 
-            <div className="">
+            <div id="mentalText" className="">
               <p className="text-center text-3xl font-body font-bold text-white">
                 Mental Tenedacy{" "}
               </p>
@@ -245,17 +255,26 @@ const Boxingclient = () => {
             </div>
 
             <div className="xs:max-lg:mt-32 lg:max-maxvp:mt-52">
-              <p className="text-center text-3xl font-body font-bold text-white">
+              <p
+                id="conHeading"
+                className="text-center text-3xl font-body font-bold text-white"
+              >
                 Confidence and Self-Belief
               </p>
-              <p className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10">
+              <p
+                id="conText"
+                className="lg:max-maxvp:text-3xl font-body md:text-xl text-white break-before-auto p-10"
+              >
                 <span className="font-bold">Building self-confidence</span> is
                 key. Mental toughness encourages you to believe in your
                 potential, boosting your self-esteem and helping you face
                 opponents with assurance.
               </p>
             </div>
-            <div className="md:flex md:justify-center p-2 mx-24 mb-10 lg:max-maxvp:mt-52">
+            <div
+              id="conImg"
+              className="md:flex md:justify-center p-2 mx-24 mb-10 lg:max-maxvp:mt-52"
+            >
               <Image
                 className="lg:max-maxvp:h-[500px] lg:max-maxvp:w-[500px] xs:max-lg:w-72 xs:max-lg:h-72 border-8 border-white rounded-full"
                 src={FemaleBoxer}
