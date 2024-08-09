@@ -52,6 +52,7 @@ const items: Items[] = [
 const Boxingclient = () => {
   const cardsRef = useRef(null);
   const btnRef = useRef(null);
+  const textRef = useRef(null);
 
   const btn = document.querySelector("#join");
 
@@ -90,15 +91,69 @@ const Boxingclient = () => {
   useGSAP(() => {
     gsap.from("#mentalImg", {
       opacity: 0,
-      x: 100,
+      x: -100,
       duration: 1.5,
       ease: "power2.out",
       scrollTrigger: {
+        trigger: "#mentalImg",
         start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+    const text = textRef.current.children;
+    gsap.from(text, {
+      opacity: 0,
+      x: 100,
+      duration: 1.5,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#mentalImg",
+        start: "center center",
+        toggleActions: "play pause resume none",
       },
     });
   });
-  // Make this run on scroll instead of immidaytley
+  // ^ Mental tings animnation^
+  useGSAP(() => {
+    gsap.from("#conHeading", {
+      opacity: 0,
+      y: -100,
+      duration: 1.5,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: "#conHeading",
+        start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+
+    gsap.from("#conText", {
+      opacity: 0,
+      x: 100,
+      duration: 1.5,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#conHeading",
+        start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+    gsap.from("#conImg", {
+      opacity: 0,
+      x: -100,
+      duration: 1.5,
+      ease: "power2.out",
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: "#conHeading",
+        start: "center center",
+        toggleActions: "play pause resume none",
+      },
+    });
+    // ^ Female Boxer animnation^
+  });
   return (
     <>
       <div className="navbar bg-black">
@@ -237,7 +292,7 @@ const Boxingclient = () => {
               ></Image>
             </div>
 
-            <div id="mentalText" className="">
+            <div ref={textRef} id="mentalText" className="">
               <p className="text-center text-3xl font-body font-bold text-white">
                 Mental Tenedacy{" "}
               </p>
@@ -291,6 +346,7 @@ const Boxingclient = () => {
             </Link>
           </div>
           {/* MAKE A PAGE TO SIGN UP FOR CLASS */}
+          {/* also make it so that it gives them a remider of when the class is whether an email or what can be done */}
         </div>
       </div>
     </>
