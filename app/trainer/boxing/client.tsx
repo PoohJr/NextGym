@@ -159,7 +159,7 @@ const Boxingclient = () => {
             <div className="flex flex-col items-center">
               <div className="relative">
                 <Image
-                  className="border-white h-[475px] w-screen"
+                  className="border-white h-[475px] md:w-[800px] xs:max-md:w-screen"
                   src={GymTrainer}
                   alt="Gym Trainer"
                 />
@@ -182,7 +182,7 @@ const Boxingclient = () => {
                 <button
                   ref={btnRef}
                   id="join"
-                  className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-out delay-100"
+                  className=" text-center rounded-lg bg-orange-500 text-white p-3 hover:bg-orange-600 transition-all ease-in-out delay-100"
                 >
                   Join Now!
                 </button>
